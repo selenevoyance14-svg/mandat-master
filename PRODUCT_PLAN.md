@@ -37,7 +37,7 @@
 ## 🛠️ Stack Technique
 
 *   **Site Web** : Next.js (Landing Page haute conversion).
-*   **Paiement** : Stripe (Bouton d'achat direct).
+*   **Paiement** : Stripe (En attente SIRET pour activation).
 *   **Livraison** : Email automatique après achat avec lien de téléchargement (Google Drive ou ZIP hébergé).
 
 ## 📅 Plan d'Action
