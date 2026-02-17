@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MandatMaster - Le Kit Ultime pour Agents Immobiliers</title>
+    <!-- Tailwind via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1D4ED8',
+                        secondary: '#F59E0B',
+                        dark: '#1F2937',
+                        light: '#F3F4F6',
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Icons (Lucide via CDN alternative or just SVG if needed, using simple FontAwesome or inline here) -->
+    <!-- We'll use inline standard SVGs for simplicity and reliability -->
+    <style>
+        .perspective-1000 {
+            perspective: 1000px;
+        }
+
+        .rotate-y-6 {
+            transform: rotateY(6deg);
+        }
+
+        .rotate-x-6 {
+            transform: rotateX(6deg);
+        }
+
+        .rotate-y-0 {
+            transform: rotateY(0deg);
+        }
+
+        .transform-style-preserve-3d {
+            transform-style: preserve-3d;
+        }
+    </style>
+</head>
+
+<body class="bg-light text-dark font-sans">
+
+    <!-- NAVBAR -->
+    <nav class="border-b border-gray-200 bg-white/80 backdrop-blur-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 h-16 flex items-center justify-between">
+            <div class="flex items-center gap-2 font-bold text-xl text-primary">
+                <!-- Building Icon -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect width="16" height="20" x="4" y="2" rx="2" ry="2" />
+                    <path d="M9 22v-4h6v4" />
+                    <path d="M8 6h.01" />
+                    <path d="M16 6h.01" />
+                    <path d="M12 6h.01" />
+                    <path d="M12 10h.01" />
+                    <path d="M12 14h.01" />
+                    <path d="M16 10h.01" />
+                    <path d="M16 14h.01" />
+                    <path d="M8 10h.01" />
+                    <path d="M8 14h.01" />
+                </svg>
+                MandatMaster
+            </div>
+            <a href="#pricing"
+                class="bg-primary text-white px-5 py-2 rounded-full font-medium hover:bg-blue-700 transition">
+                Télécharger le Kit
+            </a>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <header class="py-20 lg:py-32 overflow-hidden relative">
+        <div class="absolute inset-0 bg-gradient-to-br from-blue-50 to-amber-50 -z-10"></div>
+        <div class="container mx-auto px-4">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="text-center lg:text-left z-10">
+                    <div
+                        class="inline-flex items-center gap-2 bg-blue-100 text-primary px-4 py-1.5 rounded-full text-sm font-semibold mb-6">
+                        <!-- Star Icon -->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"
+                            fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" class="text-secondary">
+                            <polygon
+                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                        </svg>
+                        Nouveau pour 2026
+                    </div>
+                    <h1 class="text-4xl lg:text-6xl font-extrabold tracking-tight mb-6 text-dark leading-tight">
+                        Décrochez plus de mandats exclusifs <span class="text-primary">sans y passer vos soirées.</span>
+                    </h1>
+                    <p class="text-xl text-gray-600 mb-8 max-w-lg mx-auto lg:mx-0">
+                        Le kit tout-en-un pour les agents immobiliers indépendants : 50+ templates,
+                        scripts de prospection et outils d'estimation pour doubler votre CA.
+                    </p>
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+                        <a href="#pricing"
+                            class="w-full sm:w-auto bg-primary text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-blue-700 transition shadow-lg shadow-blue-500/25 flex items-center justify-center gap-2">
+                            <!-- Download Icon -->
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                                <polyline points="7 10 12 15 17 10" />
+                                <line x1="12" x2="12" y1="15" y2="3" />
+                            </svg>
+                            Obtenir le Kit Complet
+                        </a>
+                        <div class="flex items-center gap-2 text-sm text-gray-500 mt-4 sm:mt-0">
+                            <span class="font-medium flex items-center gap-1">
+                                <!-- Check Icon -->
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"
+                                    stroke-linejoin="round" class="text-green-500">
+                                    <polyline points="20 6 9 17 4 12" />
+                                </svg>
+                                +400 agents l'utilisent
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3D BOX VISUAL (CSS) -->
+                <div
+                    class="relative perspective-1000 flex justify-center lg:justify-end mt-12 lg:mt-0 z-10 hidden lg:flex">
+                    <div
+                        class="relative w-80 h-[450px] bg-gradient-to-br from-blue-700 to-blue-900 rounded-xl shadow-2xl transform rotate-y-6 rotate-x-6 border-t border-l border-white/20 flex flex-col items-center p-8 group transition duration-500 hover:rotate-0 hover:scale-105">
+                        <div class="w-full text-center border-b border-white/20 pb-4 mb-4">
+                            <div class="text-xs text-blue-300 uppercase tracking-widest mb-1">Système Complet</div>
+                            <h3 class="text-4xl font-black text-white leading-none tracking-tighter">MANDAT<br /><span
+                                    class="text-secondary">MASTER</span></h3>
+                        </div>
+                        <div class="flex-1 w-full flex flex-col justify-center gap-4">
+                            <div
+                                class="flex items-center gap-3 text-white/90 bg-white/10 p-3 rounded-lg backdrop-blur-sm">
+                                <div class="bg-secondary p-1.5 rounded text-white font-bold">1</div>
+                                <span class="text-sm font-bold">10 Scripts Pige & Relance</span>
+                            </div>
+                            <div
+                                class="flex items-center gap-3 text-white/90 bg-white/10 p-3 rounded-lg backdrop-blur-sm">
+                                <div class="bg-secondary p-1.5 rounded text-white font-bold">2</div>
+                                <span class="text-sm font-bold">50 Templates Sociaux</span>
+                            </div>
+                            <div
+                                class="flex items-center gap-3 text-white/90 bg-white/10 p-3 rounded-lg backdrop-blur-sm">
+                                <div class="bg-secondary p-1.5 rounded text-white font-bold">3</div>
+                                <span class="text-sm font-bold">Dossiers Estimation Pro</span>
+                            </div>
+                        </div>
+                        <div class="mt-4 text-xs text-blue-300 text-center w-full pt-2 border-t border-white/10">
+                            Edition Digitale 2026
+                        </div>
+                    </div>
+
+                    <!-- Floating badges -->
+                    <div
+                        class="absolute top-12 -right-8 bg-white p-3 rounded-lg shadow-xl animate-bounce duration-[3000ms] flex items-center gap-2 z-20">
+                        <div class="bg-green-100 p-1.5 rounded-full text-green-600">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <polyline points="20 6 9 17 4 12" />
+                            </svg>
+                        </div>
+                        <div class="font-bold text-dark text-xs">Vendu en 24h</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- BENEFITS -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Benefit 1 -->
+                <div class="p-6 rounded-2xl bg-gray-50 border border-gray-100 hover:border-primary/20 transition group">
+                    <div
+                        class="w-12 h-12 bg-white rounded-xl shadow-sm flex items-center justify-center mb-4 text-primary group-hover:scale-110 transition">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            class="text-secondary" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10" />
+                            <circle cx="12" cy="12" r="6" />
+                            <circle cx="12" cy="12" r="2" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Plus de Mandats</h3>
+                    <p class="text-gray-600">Arrêtez de courir après les prospects. Laissez-les venir à vous avec une
+                        communication pro.</p>
+                </div>
+                <!-- Benefit 2 -->
+                <div class="p-6 rounded-2xl bg-gray-50 border border-gray-100 hover:border-primary/20 transition group">
+                    <div
+                        class="w-12 h-12 bg-white rounded-xl shadow-sm flex items-center justify-center mb-4 text-primary group-hover:scale-110 transition">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            class="text-secondary" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round">
+                            <path d="m12 19 7-7 3 3-7 7-3-3z" />
+                            <path d="m18 13-1.5-7.5L2 2l3.5 14.5L13 18l5-5z" />
+                            <path d="m2 2 7.586 7.586" />
+                            <circle cx="11" cy="11" r="2" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Gain de Temps</h3>
+                    <p class="text-gray-600">50 templates prêts à l'emploi. Copiez, collez, publiez. 80% de votre temps
+                        récupéré.</p>
+                </div>
+                <!-- Benefit 3 -->
+                <div class="p-6 rounded-2xl bg-gray-50 border border-gray-100 hover:border-primary/20 transition group">
+                    <div
+                        class="w-12 h-12 bg-white rounded-xl shadow-sm flex items-center justify-center mb-4 text-primary group-hover:scale-110 transition">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            class="text-secondary" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10" />
+                            <path d="m9 12 2 2 4-4" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Crédibilité Immédiate</h3>
+                    <p class="text-gray-600">Passez pour l'expert du secteur avec des dossiers d'estimation
+                        ultra-qualitatifs.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MODULES -->
+    <section class="py-20 bg-dark text-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl lg:text-4xl font-bold mb-4">Tout ce qu'il vous faut pour closer</h2>
+                <p class="text-gray-400">Fini le syndrome de la page blanche et les estimations bricolées.</p>
+            </div>
+            <div class="grid lg:grid-cols-3 gap-8">
+                <!-- M1 -->
+                <div
+                    class="bg-gray-800 rounded-2xl p-8 border border-gray-700 hover:border-secondary/50 transition relative overflow-hidden">
+                    <div class="text-secondary font-bold text-sm mb-2 uppercase tracking-wider">Module 1</div>
+                    <h3 class="text-2xl font-bold mb-6">Visibilité Immédiate</h3>
+                    <ul class="space-y-3 text-gray-300">
+                        <li class="flex gap-2"><span class="text-primary font-bold">✓</span> 10 Posts 'Nouveau bien'
+                        </li>
+                        <li class="flex gap-2"><span class="text-primary font-bold">✓</span> 10 Posts 'Vendu'</li>
+                        <li class="flex gap-2"><span class="text-primary font-bold">✓</span> 10 Conseils Immo</li>
+                        <li class="flex gap-2"><span class="text-primary font-bold">✓</span> Bannières Pro</li>
+                    </ul>
+                </div>
+                <!-- M2 -->
+                <div
+                    class="bg-gray-800 rounded-2xl p-8 border border-gray-700 hover:border-secondary/50 transition relative overflow-hidden">
+                    <div class="text-secondary font-bold text-sm mb-2 uppercase tracking-wider">Module 2</div>
+                    <h3 class="text-2xl font-bold mb-6">Prospection Invincible</h3>
+                    <ul class="space-y-3 text-gray-300">
+                        <li class="flex gap-2"><span class="text-primary font-bold">✓</span> 10 Scripts Pige</li>
+                        <li class="flex gap-2"><span class="text-primary font-bold">✓</span> 20 Modèles SMS/WhatsApp
+                        </li>
+                        <li class="flex gap-2"><span class="text-primary font-bold">✓</span> Emails de Nurturing</li>
+                        <li class="flex gap-2"><span class="text-primary font-bold">✓</span> Guide Anti-Objections</li>
+                    </ul>
+                </div>
+                <!-- M3 -->
+                <div
+                    class="bg-gray-800 rounded-2xl p-8 border border-gray-700 hover:border-secondary/50 transition relative overflow-hidden">
+                    <div class="text-secondary font-bold text-sm mb-2 uppercase tracking-wider">Module 3</div>
+                    <h3 class="text-2xl font-bold mb-6">Estimation Gagnante</h3>
+                    <ul class="space-y-3 text-gray-300">
+                        <li class="flex gap-2"><span class="text-primary font-bold">✓</span> Dossier Estimation Word
+                        </li>
+                        <li class="flex gap-2"><span class="text-primary font-bold">✓</span> Flyer Boîtage</li>
+                        <li class="flex gap-2"><span class="text-primary font-bold">✓</span> Checklist Vendeur</li>
+                        <li class="flex gap-2"><span class="text-primary font-bold">✓</span> Bon de Visite Pro</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRICING -->
+    <section id="pricing" class="py-24 bg-gradient-to-b from-gray-50 to-white">
+        <div class="container mx-auto px-4 max-w-5xl">
+            <div
+                class="bg-white rounded-3xl shadow-xl overflow-hidden border border-gray-200 flex flex-col lg:flex-row">
+                <div class="p-10 lg:p-14 lg:w-3/5">
+                    <h2 class="text-3xl font-bold mb-6">Prêt à transformer votre business ?</h2>
+                    <p class="text-gray-600 mb-8 text-lg">
+                        Rejoignez les agents qui passent plus de temps à signer des mandats et moins de temps à chercher
+                        quoi poster sur Instagram.
+                    </p>
+                    <div class="space-y-4 mb-8">
+                        <div class="flex items-center gap-3">
+                            <div
+                                class="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center text-green-600">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path
+                                        d="m21 2-2 2m-7.6 7.6a6.5 6.5 0 1 1-9.199-9.199 6.5 6.5 0 0 1 9.199 9.199Zm0 0 7.7 7.7" />
+                                    <path d="m21.21 15.89-1.32-1.32 5.07-5.071" />
+                                    <path d="m15.89 21.21-1.32-1.32 5.07-5.071" />
+                                </svg>
+                            </div>
+                            <div>
+                                <div class="font-bold">Accès à vie</div>
+                                <div class="text-sm text-gray-500">Mises à jour incluses gratuitement</div>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div
+                                class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                                    <polyline points="7 10 12 15 17 10" />
+                                    <line x1="12" x2="12" y1="15" y2="3" />
+                                </svg>
+                            </div>
+                            <div>
+                                <div class="font-bold">Téléchargement immédiat</div>
+                                <div class="text-sm text-gray-500">Commencez dans 2 minutes</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div
+                    class="bg-primary p-10 lg:p-14 lg:w-2/5 text-white flex flex-col justify-center relative overflow-hidden">
+                    <div
+                        class="absolute top-0 right-0 bg-secondary text-dark text-xs font-bold px-3 py-1 rounded-bl-lg">
+                        OFFRE DE LANCEMENT
+                    </div>
+                    <div class="text-center">
+                        <div class="text-gray-200 mb-2 line-through text-lg">Valeur réelle : 197€</div>
+                        <div class="text-5xl font-extrabold mb-2">47€</div>
+                        <div class="text-blue-200 text-sm mb-8">Paiement unique</div>
+                        <button
+                            onclick="alert('Simulation : Vous seriez redirigé vers la page de paiement sécurisée Stripe (CB/Apple Pay). \n\nUne fois les 47€ réglés, vous recevriez immédiatement un email avec le lien de téléchargement du Kit (fichiers ZIP).')"
+                            class="w-full bg-secondary text-dark font-bold py-4 rounded-xl hover:bg-amber-400 transition transform hover:scale-105 shadow-lg shadow-amber-500/20">
+                            Accéder au Kit maintenant
+                        </button>
+                        <div class="mt-4 text-xs text-blue-200 text-center">
+                            Garantie satisfait ou remboursé 30 jours
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-gray-50 py-12 border-t border-gray-200 text-center text-gray-500 text-sm">
+        <p>© 2026 MandatMaster. Tous droits réservés.</p>
+    </footer>
+
+</body>
+
+</html>
