@@ -345,8 +345,21 @@
                             class="block w-full bg-secondary text-dark font-bold py-4 rounded-xl hover:bg-amber-400 transition transform hover:scale-105 shadow-lg shadow-amber-500/20 text-center">
                             Accéder au Kit maintenant
                         </a>
-                        <div class="mt-4 text-xs text-blue-200 text-center">
-                            Garantie satisfait ou remboursé 30 jours
+                        <div class="mt-6 flex items-center justify-center gap-2 bg-white/10 rounded-lg p-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="#F59E0B" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10" />
+                                <path d="m9 12 2 2 4-4" />
+                            </svg>
+                            <div class="text-left">
+                                <div class="text-white font-bold text-sm">Garantie 30 jours</div>
+                                <div class="text-blue-200 text-xs">Remboursé si pas satisfait, sans question</div>
+                            </div>
+                        </div>
+                        <div class="mt-3 flex justify-center gap-4 text-blue-200 text-xs">
+                            <span>🔒 Paiement sécurisé Stripe</span>
+                            <span>⚡ Accès immédiat</span>
                         </div>
                     </div>
                 </div>
@@ -354,8 +367,102 @@
         </div>
     </section>
 
-    <footer class="bg-gray-50 py-12 border-t border-gray-200 text-center text-gray-500 text-sm">
-        <p>© MandatMaster. Tous droits réservés.</p>
+    <!-- SECTION GARANTIE DÉTAILLÉE -->
+    <section class="bg-green-50 py-12 border-t border-green-100">
+        <div class="max-w-3xl mx-auto px-6 text-center">
+            <div class="inline-flex items-center justify-center w-16 h-16 bg-green-100 rounded-full mb-4">
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
+                    stroke="#16A34A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10" />
+                    <path d="m9 12 2 2 4-4" />
+                </svg>
+            </div>
+            <h3 class="text-2xl font-bold text-gray-800 mb-3">Garantie Satisfait ou Remboursé — 30 jours</h3>
+            <p class="text-gray-600 leading-relaxed max-w-xl mx-auto">
+                Testez le kit pendant 30 jours. Si les scripts, templates et outils ne vous aident pas
+                à décrocher plus de mandats, envoyez-nous un simple email et nous vous remboursons
+                <strong>intégralement</strong>, sans question et sans justification.
+            </p>
+            <p class="text-gray-400 text-sm mt-4">contact@mandatmaster.fr</p>
+        </div>
+    </section>
+
+    <!-- FOOTER + CGV -->
+    <footer class="bg-gray-900 text-gray-400 py-12">
+        <div class="max-w-5xl mx-auto px-6">
+            <div class="grid md:grid-cols-3 gap-8 mb-8">
+                <div>
+                    <h4 class="text-white font-bold mb-3">MandatMaster</h4>
+                    <p class="text-sm leading-relaxed">Le kit tout-en-un pour les agents immobiliers indépendants qui
+                        veulent décrocher plus de mandats exclusifs.</p>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-3">Contact</h4>
+                    <p class="text-sm">📧 contact@mandatmaster.fr</p>
+                    <p class="text-sm mt-1">🌐 mandatmaster.fr</p>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-3">Légal</h4>
+                    <p class="text-sm"><a href="#cgv" class="hover:text-white transition">Conditions Générales de
+                            Vente</a></p>
+                    <p class="text-sm mt-1"><a href="#mentions" class="hover:text-white transition">Mentions Légales</a>
+                    </p>
+                    <p class="text-sm mt-1"><a href="#remboursement" class="hover:text-white transition">Politique de
+                            Remboursement</a></p>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-700 pt-8 space-y-6 text-xs leading-relaxed">
+
+                <div id="cgv">
+                    <h5 class="text-white font-bold text-sm mb-2">Conditions Générales de Vente (CGV)</h5>
+                    <p>Les présentes CGV régissent la vente du produit numérique « MandatMaster — Boîte à Outils de
+                        l'Agent Immobilier » (ci-après « le Kit ») vendu au prix de 47 € TTC, paiement unique.</p>
+                    <p class="mt-2"><strong class="text-gray-300">Produit :</strong> Le Kit est un ensemble de documents
+                        numériques au format PDF téléchargeables immédiatement après paiement. Il comprend des scripts
+                        de prospection, des templates de réseaux sociaux, un calendrier éditorial, des fiches de suivi,
+                        des séquences emails et des outils terrain.</p>
+                    <p class="mt-2"><strong class="text-gray-300">Livraison :</strong> Le Kit est livré immédiatement
+                        après validation du paiement via un lien de téléchargement sur la page de confirmation. Aucune
+                        livraison physique n'est effectuée.</p>
+                    <p class="mt-2"><strong class="text-gray-300">Paiement :</strong> Le paiement est effectué de
+                        manière sécurisée via la plateforme Stripe. Les données bancaires ne sont ni collectées ni
+                        stockées par MandatMaster.</p>
+                    <p class="mt-2"><strong class="text-gray-300">Propriété intellectuelle :</strong> Le contenu du Kit
+                        est protégé par le droit d'auteur. L'acheteur bénéficie d'une licence d'utilisation personnelle
+                        et professionnelle, non transférable. La revente ou la redistribution du Kit est strictement
+                        interdite.</p>
+                </div>
+
+                <div id="remboursement">
+                    <h5 class="text-white font-bold text-sm mb-2">Politique de Remboursement</h5>
+                    <p>Conformément à notre engagement de satisfaction, nous offrons une <strong
+                            class="text-gray-300">garantie satisfait ou remboursé de 30 jours</strong> à compter de la
+                        date d'achat. Si le Kit ne répond pas à vos attentes, envoyez un email à contact@mandatmaster.fr
+                        avec votre motif de demande. Le remboursement sera effectué sous 7 jours ouvrés via le moyen de
+                        paiement initial.</p>
+                    <p class="mt-2">Conformément à l'article L221-28 du Code de la consommation, le droit de
+                        rétractation ne peut être exercé pour les contrats de fourniture de contenu numérique fourni sur
+                        un support immatériel dont l'exécution a commencé avec l'accord du consommateur. Toutefois,
+                        notre garantie commerciale de 30 jours s'applique en complément.</p>
+                </div>
+
+                <div id="mentions">
+                    <h5 class="text-white font-bold text-sm mb-2">Mentions Légales</h5>
+                    <p><strong class="text-gray-300">Éditeur :</strong> MandatMaster — Entrepreneur individuel</p>
+                    <p><strong class="text-gray-300">Hébergeur :</strong> Netlify, Inc. — 44 Montgomery Street, Suite
+                        300, San Francisco, CA 94104, USA</p>
+                    <p><strong class="text-gray-300">Contact :</strong> contact@mandatmaster.fr</p>
+                    <p class="mt-2">Conformément à la loi n° 2004-575 du 21 juin 2004 pour la confiance dans l'économie
+                        numérique, les informations relatives à l'identité de l'éditeur sont accessibles sur demande à
+                        l'adresse email ci-dessus.</p>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-700 mt-8 pt-6 text-center text-xs">
+                <p>© 2026 MandatMaster. Tous droits réservés. | Paiement sécurisé par Stripe 🔒</p>
+            </div>
+        </div>
     </footer>
 
 </body>
