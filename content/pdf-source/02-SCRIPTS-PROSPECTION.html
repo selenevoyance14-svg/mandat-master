@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            color: #1F2937;
+            line-height: 1.7;
+            font-size: 13px;
+        }
+
+        .cover {
+            page-break-after: always;
+            height: 100vh;
+            background: linear-gradient(135deg, #1D4ED8 0%, #1E3A8A 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+            padding: 60px;
+        }
+
+        .cover .badge {
+            background: #F59E0B;
+            color: #1F2937;
+            padding: 8px 24px;
+            border-radius: 50px;
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 40px;
+        }
+
+        .cover h1 {
+            font-size: 42px;
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 10px;
+        }
+
+        .cover h1 span {
+            color: #F59E0B;
+        }
+
+        .cover .subtitle {
+            font-size: 18px;
+            color: rgba(255, 255, 255, 0.8);
+            margin-top: 20px;
+            max-width: 550px;
+        }
+
+        .cover .footer-cover {
+            position: absolute;
+            bottom: 40px;
+            font-size: 11px;
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .page {
+            padding: 50px 60px;
+            page-break-after: always;
+        }
+
+        .header-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 3px solid #1D4ED8;
+            padding-bottom: 15px;
+            margin-bottom: 35px;
+        }
+
+        .header-bar .logo {
+            font-weight: 900;
+            font-size: 16px;
+            color: #1D4ED8;
+        }
+
+        .header-bar .module {
+            background: #EFF6FF;
+            color: #1D4ED8;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 700;
+        }
+
+        h2 {
+            font-size: 26px;
+            font-weight: 800;
+            color: #1D4ED8;
+            margin-bottom: 20px;
+        }
+
+        h3 {
+            font-size: 17px;
+            font-weight: 700;
+            color: #1F2937;
+            margin-top: 28px;
+            margin-bottom: 10px;
+            padding-left: 15px;
+            border-left: 4px solid #F59E0B;
+        }
+
+        h4 {
+            font-size: 14px;
+            font-weight: 700;
+            color: #374151;
+            margin-top: 18px;
+            margin-bottom: 8px;
+        }
+
+        p {
+            margin-bottom: 12px;
+            color: #374151;
+        }
+
+        .script-box {
+            background: #F9FAFB;
+            border: 1px solid #E5E7EB;
+            border-radius: 12px;
+            padding: 25px;
+            margin: 15px 0;
+        }
+
+        .script-box .label {
+            background: #1D4ED8;
+            color: white;
+            padding: 4px 14px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 700;
+            display: inline-block;
+            margin-bottom: 12px;
+        }
+
+        .script-text {
+            background: white;
+            border-left: 4px solid #F59E0B;
+            padding: 15px 20px;
+            margin: 12px 0;
+            border-radius: 0 8px 8px 0;
+            font-style: italic;
+            color: #1F2937;
+            line-height: 1.8;
+        }
+
+        .highlight-box {
+            background: #EFF6FF;
+            border-left: 4px solid #1D4ED8;
+            padding: 18px 22px;
+            margin: 18px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .highlight-box.success {
+            background: #ECFDF5;
+            border-left-color: #10B981;
+        }
+
+        .highlight-box.warning {
+            background: #FEF3C7;
+            border-left-color: #F59E0B;
+        }
+
+        .highlight-box p {
+            margin-bottom: 0;
+        }
+
+        .sms-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin: 15px 0;
+        }
+
+        .sms-card {
+            background: #F0FDF4;
+            border: 1px solid #BBF7D0;
+            border-radius: 10px;
+            padding: 14px;
+            font-size: 12px;
+        }
+
+        .sms-card .num {
+            background: #10B981;
+            color: white;
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 11px;
+            font-weight: 700;
+            margin-right: 6px;
+        }
+
+        ul,
+        ol {
+            margin: 10px 0;
+            padding-left: 25px;
+        }
+
+        li {
+            margin-bottom: 6px;
+            color: #374151;
+        }
+
+        .footer {
+            text-align: center;
+            color: #9CA3AF;
+            font-size: 10px;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #E5E7EB;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- COUVERTURE -->
+    <div class="cover">
+        <div class="badge">Module 2 — Prospection</div>
+        <h1>SCRIPTS DE <span>PROSPECTION</span></h1>
+        <p class="subtitle">Scripts téléphoniques, modèles SMS/WhatsApp, emails de nurturing et guide anti-objections.
+        </p>
+        <div class="footer-cover">© MandatMaster — mandatmaster.fr</div>
+    </div>
+
+    <!-- PAGE 1 : SCRIPTS TÉLÉPHONIQUES -->
+    <div class="page">
+        <div class="header-bar">
+            <div class="logo">MANDAT MASTER</div>
+            <div class="module">Module 2 — Prospection</div>
+        </div>
+
+        <h2>📞 Scripts Téléphoniques</h2>
+
+        <div class="script-box">
+            <div class="label">Script 1 — Pige Froide (Particulier à Particulier)</div>
+            <h4>Objectif : Obtenir un rendez-vous d'estimation, pas vendre le mandat au téléphone.</h4>
+
+            <div class="script-text">
+                "Bonjour, je suis <strong>[Votre Prénom]</strong> de l'agence <strong>[Nom Agence]</strong>. Je vous
+                appelle au sujet de votre maison située à <strong>[Ville/Quartier]</strong> que j'ai vue sur
+                LeBonCoin.<br><br>
+                Est-ce que je vous dérange ?"
+            </div>
+
+            <p><em>(Si non)</em> :</p>
+            <div class="script-text">
+                "Super, je serai bref. Je travaille beaucoup sur ce secteur et j'ai remarqué que votre bien correspond à
+                la recherche de certains de mes clients. Est-ce que vous collaborez avec des professionnels ?"
+            </div>
+
+            <p><em>(Si 'Non, pas d'agence')</em> :</p>
+            <div class="script-text">
+                "Je comprends tout à fait. Vous souhaitez tenter votre chance seul pour économiser les frais, c'est
+                normal.<br><br>
+                Si je vous disais que j'ai peut-être l'acquéreur idéal dans mon fichier, seriez-vous contre le fait que
+                je vienne visiter votre bien (sans engagement) pour valider s'il correspond ?"
+            </div>
+
+            <div class="highlight-box success">
+                <p><strong>🔑 Clés du succès :</strong> Ton calme et posé. Ne pas chercher à convaincre, mais à rendre
+                    service. Valider le RDV pour "vérifier la correspondance", pas pour signer un mandat.</p>
+            </div>
+        </div>
+
+        <div class="script-box">
+            <div class="label">Script 2 — Preuve Sociale (Bien Vendu par un Voisin)</div>
+            <h4>Objectif : Utiliser une vente récente pour générer de nouveaux leads.</h4>
+
+            <div class="script-text">
+                "Bonjour, c'est <strong>[Votre Prénom]</strong>. Je me permets de vous contacter car je viens de vendre
+                la maison de vos voisins, M. et Mme <strong>[Nom]</strong>, située <strong>[Adresse]</strong>.<br><br>
+                Ils m'ont confié la vente et nous avons trouvé un acquéreur en moins de <strong>[X]</strong>
+                semaines.<br><br>
+                Comme j'ai eu beaucoup d'appels pour leur maison, il me reste plusieurs acheteurs qualifiés qui
+                recherchent activement dans votre quartier. Est-ce que vous, ou l'un de vos voisins, auriez envisagé de
+                vendre prochainement ?"
+            </div>
+
+            <div class="highlight-box success">
+                <p><strong>🔑 Clés :</strong> Citer des noms (avec accord) ou des rues précises crée la confiance.
+                    Mettre en avant la "demande excédentaire".</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- PAGE 2 : SCRIPT 3 + SMS -->
+    <div class="page">
+        <div class="header-bar">
+            <div class="logo">MANDAT MASTER</div>
+            <div class="module">Module 2 — Prospection</div>
+        </div>
+
+        <div class="script-box">
+            <div class="label">Script 3 — Relance Estimation (3-6 mois)</div>
+            <h4>Objectif : Réactiver un prospect tiède.</h4>
+
+            <div class="script-text">
+                "Bonjour <strong>[Nom du Prospect]</strong>, c'est <strong>[Votre Prénom]</strong>.<br><br>
+                Je remettais à jour mes dossiers et je suis retombé sur l'estimation que nous avions faite ensemble en
+                <strong>[Mois]</strong>.<br><br>
+                Le marché a un peu bougé depuis. Je voulais simplement savoir où vous en étiez de votre projet de vente
+                ?"
+            </div>
+
+            <p><em>(Laisser parler, puis)</em> :</p>
+            <div class="script-text">
+                "Si vous voulez, je peux passer actualiser l'estimation rapidement pour que vous ayez une idée précise
+                de la valeur aujourd'hui. Ça vous prendra 15 minutes."
+            </div>
+        </div>
+
+        <h2 style="margin-top: 35px;">💬 Modèles SMS & WhatsApp</h2>
+        <p>Copiez-collez ces messages. Taux de réponse supérieur à l'appel vocal.</p>
+
+        <h3>Prise de contact (Suite à une annonce)</h3>
+        <div class="sms-grid">
+            <div class="sms-card"><span class="num">1</span> "Bonjour Mr/Mme [Nom]. J'ai vu votre maison sur LBC. Je
+                cherche ce type de bien pour un client (financement validé). Êtes-vous ouverts aux agences ? [Votre
+                Prénom]"</div>
+            <div class="sms-card"><span class="num">2</span> "Votre bien à [Ville] est-il toujours dispo ? J'ai
+                peut-être une visite à organiser cette semaine. Dispo pour un court échange ? [Votre Prénom]"</div>
+            <div class="sms-card"><span class="num">3</span> "Alerte Recherche : J'ai une famille qui cherche exactement
+                votre quartier. Acceptez-vous une visite qualifiée si je m'occupe de tout ? [Votre Prénom]"</div>
+        </div>
+
+        <h3>Relance après estimation</h3>
+        <div class="sms-grid">
+            <div class="sms-card"><span class="num">4</span> "Avez-vous pu réfléchir à notre échange sur l'estimation ?
+                Le marché bouge, j'ai une info importante. Appelez-moi quand vous pouvez. [Votre Prénom]"</div>
+            <div class="sms-card"><span class="num">5</span> "Juste un petit message pour prendre des nouvelles de votre
+                projet vente. Toujours d'actualité ou en pause ? [Votre Prénom]"</div>
+        </div>
+
+        <h3>Confirmer un RDV</h3>
+        <div class="sms-grid">
+            <div class="sms-card"><span class="num">6</span> "C'est noté pour demain 14h à [Adresse]. Hâte de découvrir
+                votre bien. À demain ! [Votre Prénom]"</div>
+            <div class="sms-card"><span class="num">7</span> "RDV confirmé pour l'estimation ce [Jour] à [Heure].
+                Prévoyez environ 45min. Bonne journée !"</div>
+        </div>
+
+        <h3>Non-réponse au téléphone</h3>
+        <div class="sms-grid">
+            <div class="sms-card"><span class="num">8</span> "J'ai tenté de vous joindre concernant votre annonce. J'ai
+                une question sur la surface. Pouvez-vous me rappeler ? [Votre Prénom]"</div>
+            <div class="sms-card"><span class="num">9</span> "Je vous ai laissé un vocal. C'était au sujet de la vente
+                de votre maison. Rappelez-moi, c'est assez urgent."</div>
+        </div>
+
+        <h3>Demande d'avis Google (Après vente)</h3>
+        <div class="sms-grid">
+            <div class="sms-card"><span class="num">10</span> "Salut [Nom] ! J'espère que l'installation se passe bien.
+                Pourrais-tu me laisser un petit avis Google ? Ça m'aiderait énormément ! Lien : [Votre Lien]"</div>
+        </div>
+
+        <div class="footer">© MandatMaster — mandatmaster.fr — Tous droits réservés</div>
+    </div>
+
+    <!-- PAGE 3 : EMAILS -->
+    <div class="page">
+        <div class="header-bar">
+            <div class="logo">MANDAT MASTER</div>
+            <div class="module">Module 2 — Emails</div>
+        </div>
+
+        <h2>📧 Emails de Nurturing</h2>
+        <p>À envoyer à votre base de contacts pour rester dans leur esprit.</p>
+
+        <div class="script-box">
+            <div class="label">Email 1 — L'info marché (mensuel)</div>
+            <h4>Sujet : Prix de l'immobilier à [Ville] : Ça monte ou ça baisse ?</h4>
+
+            <div class="script-text">
+                Bonjour [Prénom],<br><br>
+                Si vous suivez un peu l'actualité, vous entendez tout et son contraire sur l'immobilier. J'ai voulu
+                faire le point sur ce qui se passe RÉELLEMENT dans notre quartier.<br><br>
+                Ce mois-ci à [Ville] :<br>
+                • Les délais de vente s'allongent légèrement (il faut être au JUSTE prix).<br>
+                • Les acquéreurs sont plus exigeants sur le DPE.<br><br>
+                Ce que cela signifie pour vous si vous vendez : Il ne faut plus "tester" le marché, il faut le marquer
+                d'entrée.<br><br>
+                Vous voulez savoir combien vaut votre bien dans ce nouveau contexte ?<br>
+                <strong>Répondez juste "ESTIMATION" à cet email</strong>, et je vous offre une mise à jour de votre
+                dossier.<br><br>
+                À très vite,<br>
+                [Votre Signature]
+            </div>
+        </div>
+
+        <div class="script-box">
+            <div class="label">Email 2 — Preuve Sociale (storytelling)</div>
+            <h4>Sujet : Vendu en 12 jours (voici comment)</h4>
+
+            <div class="script-text">
+                Bonjour [Prénom],<br><br>
+                Je voulais partager une petite victoire avec vous. Pas pour me vanter, mais pour vous montrer ce qui est
+                possible quand on a la bonne stratégie.<br><br>
+                J'ai récemment vendu un appartement rue [Nom Rue], similaire à ce que vous possédez peut-être. Il était
+                en vente de particulier à particulier depuis 3 mois sans succès.<br><br>
+                <strong>Ma méthode ?</strong><br>
+                1. Photos HD (la base).<br>
+                2. Diffusion ciblée sur mon fichier acquéreur (off market).<br>
+                3. Visites groupées le samedi.<br><br>
+                <strong>Résultat : 2 offres au prix en 48h.</strong><br><br>
+                Votre bien mérite la même attention. On en parle ?<br><br>
+                Bonne journée,<br>
+                [Votre Signature]
+            </div>
+        </div>
+
+        <div class="footer">© MandatMaster — mandatmaster.fr — Tous droits réservés</div>
+    </div>
+
+    <!-- PAGE 4 : ANTI-OBJECTIONS -->
+    <div class="page">
+        <div class="header-bar">
+            <div class="logo">MANDAT MASTER</div>
+            <div class="module">Module 2 — Anti-Objections</div>
+        </div>
+
+        <h2>🛡️ Guide Anti-Objections</h2>
+        <p>Les 4 objections que vous entendrez à chaque fois, et comment les désamorcer.</p>
+
+        <div class="script-box">
+            <div class="label">Objection 1 — "Je veux vendre seul (PAP)"</div>
+            <h4>Ce qu'ils pensent vraiment : "Je ne veux pas payer ta commission."</h4>
+
+            <div class="script-text">
+                <strong>Empathie :</strong> "Je comprends tout à fait. C'est légitime de vouloir maximiser votre net
+                vendeur."<br><br>
+                <strong>Rebond :</strong> "Dites-moi, si vous aviez la certitude qu'un agent pourrait vous faire gagner
+                plus d'argent net (frais déduits) que si vous vendiez seul... est-ce que vous seriez quand même fermé à
+                l'idée ?"<br><br>
+                <strong>Argument choc :</strong> "Les biens vendus entre particuliers se vendent en moyenne 5 à 10%
+                moins cher car les acheteurs négocient directement la commission qu'ils savent que vous ne payez pas. En
+                passant par moi, c'est l'acheteur qui paie mes honoraires."
+            </div>
+        </div>
+
+        <div class="script-box">
+            <div class="label">Objection 2 — "Vos honoraires sont trop élevés"</div>
+            <h4>Ce qu'ils pensent : "Je ne vois pas la valeur de ton travail."</h4>
+
+            <div class="script-text">
+                <strong>Réponse :</strong> "C'est cher par rapport à quoi ? Par rapport à une agence low-cost qui met
+                juste une annonce ? Oui, absolument."<br><br>
+                <strong>L'analogie :</strong> "Si vous deviez vous faire opérer, choisiriez-vous le chirurgien le moins
+                cher ou celui qui a le meilleur taux de réussite ?"<br><br>
+                <strong>Justification :</strong> "Mes honoraires couvrent un photographe pro (300€), la diffusion
+                premium (500€/mois), 60h de qualification, et une négociation qui vous fait gagner 5 à 10k€. Lequel
+                voulez-vous que je supprime ?"
+            </div>
+        </div>
+
+        <div class="script-box">
+            <div class="label">Objection 3 — "Je ne suis pas pressé"</div>
+            <h4>Ce qu'ils pensent : "Je veux un prix irréaliste."</h4>
+
+            <div class="script-text">
+                <strong>Réponse :</strong> "Tant mieux ! Vendre dans l'urgence est la pire des situations."<br><br>
+                <strong>Le danger :</strong> "Un bien qui reste trop longtemps sur le marché (plus de 3 mois) devient
+                'suspect'. On appelle ça un bien 'grillé'. Et il finit par se vendre en dessous du prix du marché. Mon
+                objectif est de vendre au meilleur prix, ce qui se fait dans les 30 premiers jours."
+            </div>
+        </div>
+
+        <div class="script-box">
+            <div class="label">Objection 4 — "On a une estimation plus haute"</div>
+            <h4>Ce qu'ils pensent : "Je vais signer avec celui qui me promet la lune."</h4>
+
+            <div class="script-text">
+                <strong>Réponse :</strong> "Je ne suis pas surpris. Certains confrères surestiment pour obtenir le
+                mandat, puis demandent une baisse 3 semaines plus tard. On appelle ça 'acheter le mandat'."<br><br>
+                <strong>La preuve :</strong> "Moi, je m'engage sur ce que je peux vendre. Regardons ensemble les biens
+                VENDUS récemment dans votre rue. C'est la seule réalité. Préférez-vous une estimation haute qui ne se
+                vend pas, ou une estimation juste qui vous permet de déménager dans 3 mois ?"
+            </div>
+        </div>
+
+        <div class="footer">© MandatMaster — mandatmaster.fr — Tous droits réservés</div>
+    </div>
+
+</body>
+
+</html>

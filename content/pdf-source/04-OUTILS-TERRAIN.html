@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            color: #1F2937;
+            line-height: 1.7;
+            font-size: 13px;
+        }
+
+        .cover {
+            page-break-after: always;
+            height: 100vh;
+            background: linear-gradient(135deg, #1D4ED8 0%, #1E3A8A 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+            padding: 60px;
+        }
+
+        .cover .badge {
+            background: #F59E0B;
+            color: #1F2937;
+            padding: 8px 24px;
+            border-radius: 50px;
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 40px;
+        }
+
+        .cover h1 {
+            font-size: 42px;
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 10px;
+        }
+
+        .cover h1 span {
+            color: #F59E0B;
+        }
+
+        .cover .subtitle {
+            font-size: 18px;
+            color: rgba(255, 255, 255, 0.8);
+            margin-top: 20px;
+            max-width: 550px;
+        }
+
+        .cover .footer-cover {
+            position: absolute;
+            bottom: 40px;
+            font-size: 11px;
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .page {
+            padding: 50px 60px;
+            page-break-after: always;
+        }
+
+        .header-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 3px solid #1D4ED8;
+            padding-bottom: 15px;
+            margin-bottom: 35px;
+        }
+
+        .header-bar .logo {
+            font-weight: 900;
+            font-size: 16px;
+            color: #1D4ED8;
+        }
+
+        .header-bar .module {
+            background: #EFF6FF;
+            color: #1D4ED8;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 700;
+        }
+
+        h2 {
+            font-size: 26px;
+            font-weight: 800;
+            color: #1D4ED8;
+            margin-bottom: 20px;
+        }
+
+        h3 {
+            font-size: 17px;
+            font-weight: 700;
+            color: #1F2937;
+            margin-top: 25px;
+            margin-bottom: 10px;
+            padding-left: 15px;
+            border-left: 4px solid #F59E0B;
+        }
+
+        p {
+            margin-bottom: 12px;
+            color: #374151;
+        }
+
+        .doc-card {
+            background: #F9FAFB;
+            border: 1px solid #E5E7EB;
+            border-radius: 12px;
+            padding: 25px;
+            margin: 18px 0;
+        }
+
+        .doc-card .tag {
+            display: inline-block;
+            background: #1D4ED8;
+            color: white;
+            padding: 4px 14px;
+            border-radius: 20px;
+            font-size: 10px;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+        }
+
+        .doc-card .tag.green {
+            background: #10B981;
+        }
+
+        .doc-card .tag.amber {
+            background: #F59E0B;
+            color: #1F2937;
+        }
+
+        .checklist {
+            list-style: none;
+            padding: 0;
+            margin: 12px 0;
+        }
+
+        .checklist li {
+            padding: 10px 15px;
+            border-bottom: 1px solid #E5E7EB;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+
+        .checklist li:last-child {
+            border-bottom: none;
+        }
+
+        .check-icon {
+            width: 22px;
+            height: 22px;
+            border: 2px solid #D1D5DB;
+            border-radius: 4px;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .section-box {
+            background: white;
+            border: 1px solid #E5E7EB;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 12px 0;
+        }
+
+        .section-box h4 {
+            font-size: 14px;
+            font-weight: 700;
+            color: #1D4ED8;
+            margin-bottom: 10px;
+            margin-top: 0;
+        }
+
+        .dossier-structure {
+            counter-reset: section;
+        }
+
+        .dossier-item {
+            background: white;
+            border-left: 4px solid #1D4ED8;
+            padding: 15px 20px;
+            margin: 10px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .dossier-item h4 {
+            margin-top: 0;
+            color: #1D4ED8;
+            font-size: 14px;
+        }
+
+        .dossier-item p {
+            font-size: 12px;
+            margin-bottom: 0;
+        }
+
+        .highlight-box {
+            background: #EFF6FF;
+            border-left: 4px solid #1D4ED8;
+            padding: 15px 20px;
+            margin: 15px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .highlight-box.success {
+            background: #ECFDF5;
+            border-left-color: #10B981;
+        }
+
+        .highlight-box.warning {
+            background: #FEF3C7;
+            border-left-color: #F59E0B;
+        }
+
+        .highlight-box p {
+            margin-bottom: 0;
+        }
+
+        ul {
+            margin: 10px 0;
+            padding-left: 25px;
+        }
+
+        li {
+            margin-bottom: 6px;
+            color: #374151;
+        }
+
+        .flyer-box {
+            background: white;
+            border: 2px dashed #D1D5DB;
+            border-radius: 12px;
+            padding: 25px;
+            margin: 15px 0;
+            text-align: center;
+        }
+
+        .flyer-box .flyer-content {
+            text-align: left;
+            background: #F9FAFB;
+            border-radius: 8px;
+            padding: 20px;
+            margin-top: 12px;
+            font-size: 12px;
+            line-height: 1.8;
+        }
+
+        .footer {
+            text-align: center;
+            color: #9CA3AF;
+            font-size: 10px;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #E5E7EB;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- COUVERTURE -->
+    <div class="cover">
+        <div class="badge">Module 3 — Outils Terrain</div>
+        <h1>OUTILS <span>TERRAIN</span></h1>
+        <p class="subtitle">Checklist Vendeur, Dossier d'Estimation, Bon de Visite et Modèles de Flyers. Imprimez et
+            utilisez dès aujourd'hui.</p>
+        <div class="footer-cover">© MandatMaster — mandatmaster.fr</div>
+    </div>
+
+    <!-- PAGE 1 : CHECKLIST VENDEUR -->
+    <div class="page">
+        <div class="header-bar">
+            <div class="logo">MANDAT MASTER</div>
+            <div class="module">Module 3 — À imprimer</div>
+        </div>
+
+        <h2>✅ Checklist Vendeur</h2>
+        <p><em>Document à remettre au vendeur lors de l'estimation. Imprimez, remettez-le en main propre — ça fait toute
+                la différence.</em></p>
+
+        <div class="doc-card">
+            <span class="tag">1. Désencombrer — Faire de l'espace</span>
+            <ul class="checklist">
+                <li><span class="check-icon"></span> Retirer les manteaux et chaussures de l'entrée</li>
+                <li><span class="check-icon"></span> Vider les plans de travail de la cuisine</li>
+                <li><span class="check-icon"></span> Retirer les photos de famille trop nombreuses (l'acheteur doit se
+                    projeter)</li>
+                <li><span class="check-icon"></span> Ranger les produits d'hygiène dans la salle de bain</li>
+                <li><span class="check-icon"></span> Libérer l'espace au sol (jouets, équipements de sport...)</li>
+            </ul>
+        </div>
+
+        <div class="doc-card">
+            <span class="tag">2. Dépersonnaliser — Neutraliser le style</span>
+            <ul class="checklist">
+                <li><span class="check-icon"></span> Repeindre les murs aux couleurs trop vives en blanc ou tons neutres
+                </li>
+                <li><span class="check-icon"></span> Retirer les collections personnelles ou objets religieux/politiques
+                </li>
+                <li><span class="check-icon"></span> Changer le linge de maison s'il est usé ou coloré (mettre du blanc
+                    propre)</li>
+            </ul>
+        </div>
+
+        <div class="doc-card">
+            <span class="tag green">3. Nettoyer — Faire briller</span>
+            <ul class="checklist">
+                <li><span class="check-icon"></span> Faire les vitres (intérieur ET extérieur) — la luminosité est le
+                    critère n°1 !</li>
+                <li><span class="check-icon"></span> Nettoyer les joints de salle de bain</li>
+                <li><span class="check-icon"></span> Dépoussiérer les plinthes et les luminaires</li>
+                <li><span class="check-icon"></span> Astiquer la robinetterie</li>
+            </ul>
+        </div>
+
+        <div class="doc-card">
+            <span class="tag amber">4. Réparer — Les détails qui comptent</span>
+            <ul class="checklist">
+                <li><span class="check-icon"></span> Changer les ampoules grillées (toutes les pièces doivent être
+                    éclairées)</li>
+                <li><span class="check-icon"></span> Resserrer les poignées de porte qui bougent</li>
+                <li><span class="check-icon"></span> Reboucher les petits trous dans les murs</li>
+                <li><span class="check-icon"></span> Huiler les portes qui grincent</li>
+            </ul>
+        </div>
+
+        <div class="doc-card">
+            <span class="tag" style="background:#7C3AED;">5. L'ambiance "Coup de Cœur" — Le jour J</span>
+            <ul class="checklist">
+                <li><span class="check-icon"></span> Aérer toutes les pièces 15 minutes avant</li>
+                <li><span class="check-icon"></span> Ouvrir tous les volets et rideaux</li>
+                <li><span class="check-icon"></span> Allumer toutes les lumières (même en plein jour)</li>
+                <li><span class="check-icon"></span> Mettre une légère musique de fond (jazz, lounge)</li>
+                <li><span class="check-icon"></span> Pas d'odeur de cuisine (cuire du pain ou café frais, ça marche !)
+                </li>
+                <li><span class="check-icon"></span> Faire garder les animaux si possible</li>
+            </ul>
+        </div>
+
+        <div class="highlight-box">
+            <p><strong>💡 Astuce Pro :</strong> En tant que votre conseiller exclusif, je peux vous recommander des
+                artisans ou faire intervenir un photographe professionnel pour sublimer votre bien une fois ces étapes
+                validées.</p>
+        </div>
+    </div>
+
+    <!-- PAGE 2 : DOSSIER ESTIMATION -->
+    <div class="page">
+        <div class="header-bar">
+            <div class="logo">MANDAT MASTER</div>
+            <div class="module">Module 3 — Estimation</div>
+        </div>
+
+        <h2>📊 Structure du Dossier d'Estimation</h2>
+        <p>Créez ce dossier sur Word ou Canva. Imprimez-le en couleur et reliez-le. <strong>C'est ce qui vous distingue
+                des concurrents qui envoient un simple email avec un chiffre.</strong></p>
+
+        <div class="dossier-structure">
+            <div class="dossier-item">
+                <h4>📄 Page 1 — Couverture</h4>
+                <p>Photo du bien + Logo + "Avis de Valeur — [Adresse]" + Date + Votre nom</p>
+            </div>
+            <div class="dossier-item">
+                <h4>📄 Page 2 — Présentation du bien</h4>
+                <p>Adresse, superficie, nombre de pièces, année de construction, DPE, description factuelle</p>
+            </div>
+            <div class="dossier-item">
+                <h4>📄 Page 3 — Analyse du marché local</h4>
+                <p>Prix moyen au m² dans le quartier, évolution sur 12 mois, nombre de biens en vente actuellement,
+                    délai moyen de vente</p>
+            </div>
+            <div class="dossier-item">
+                <h4>📄 Page 4 — Comparables (CRUCIAL)</h4>
+                <p>3 à 5 biens VENDUS récemment dans le même secteur avec prix, superficie, date de vente. C'est la
+                    preuve objective.</p>
+            </div>
+            <div class="dossier-item">
+                <h4>📄 Page 5 — Notre estimation</h4>
+                <p>Fourchette de prix (bas / médian / haut), prix recommandé, justification méthodologique</p>
+            </div>
+            <div class="dossier-item">
+                <h4>📄 Page 6 — Stratégie de commercialisation</h4>
+                <p>Photos pro, diffusion multi-portails, fichier acquéreurs, visites qualifiées, délai prévu, votre plan
+                    d'action semaine par semaine</p>
+            </div>
+            <div class="dossier-item">
+                <h4>📄 Page 7 — Vos engagements & contacts</h4>
+                <p>Ce que vous vous engagez à faire, reporting hebdomadaire, vos coordonnées, vos avis Google</p>
+            </div>
+        </div>
+
+        <div class="highlight-box warning">
+            <p><strong>⚠️ Important :</strong> Ne donnez JAMAIS le prix par email ou téléphone. Le prix se donne en main
+                propre, avec ce dossier. C'est la seule façon de montrer toute votre valeur.</p>
+        </div>
+    </div>
+
+    <!-- PAGE 3 : BON DE VISITE + FLYERS -->
+    <div class="page">
+        <div class="header-bar">
+            <div class="logo">MANDAT MASTER</div>
+            <div class="module">Module 3 — Documents</div>
+        </div>
+
+        <h2>📋 Bon de Visite</h2>
+        <p>Document obligatoire à faire signer par chaque visiteur. Protège juridiquement votre travail.</p>
+
+        <div class="doc-card">
+            <div class="section-box">
+                <h4>Informations Visiteur</h4>
+                <p>Nom : _________________________ Prénom : _________________________</p>
+                <p>Adresse : _________________________________________________________</p>
+                <p>Téléphone : _____________________ Email : _________________________</p>
+            </div>
+            <div class="section-box">
+                <h4>Bien Visité</h4>
+                <p>Adresse du bien : _________________________________________________</p>
+                <p>Référence : ____________ Date de visite : ___/___/_______ Heure : _______</p>
+            </div>
+            <div class="section-box">
+                <h4>Engagement</h4>
+                <p style="font-size: 11px;"><em>"Je soussigné(e) reconnais avoir visité le bien décrit ci-dessus par
+                        l'intermédiaire de <strong>[Nom Agence / Agent]</strong>. Je m'engage à informer l'agence de
+                        toute décision relative à ce bien et reconnais que toute transaction réalisée directement avec
+                        le vendeur dans les 24 mois suivant cette visite donnera lieu au paiement des honoraires
+                        d'agence."</em></p>
+                <p style="margin-top: 15px;">Signature Visiteur : _____________ &nbsp;&nbsp;&nbsp; Signature Agent :
+                    _____________</p>
+            </div>
+        </div>
+
+        <h2 style="margin-top: 40px;">📬 Modèles de Flyers (Boîtage)</h2>
+        <p>À imprimer et distribuer dans les boîtes aux lettres de votre zone.</p>
+
+        <div class="flyer-box">
+            <span class="doc-card .tag"
+                style="background:#1D4ED8; color:white; padding: 4px 14px; border-radius: 20px; font-size: 10px; font-weight: 700;">Flyer
+                1 — Estimation Offerte</span>
+            <div class="flyer-content">
+                <strong style="font-size: 16px; color: #1D4ED8;">COMBIEN VAUT VOTRE BIEN ?</strong><br><br>
+                Estimation gratuite et sans engagement<br>
+                par <strong>[Votre Prénom]</strong>, expert immobilier sur <strong>[Ville/Quartier]</strong><br><br>
+                ✅ Analyse des biens vendus dans votre rue<br>
+                ✅ Rapport détaillé remis en main propre<br>
+                ✅ Conseils personnalisés pour vendre au meilleur prix<br><br>
+                📞 <strong>[Votre Numéro]</strong> | 📧 <strong>[Votre Email]</strong>
+            </div>
+        </div>
+
+        <div class="flyer-box">
+            <span
+                style="background:#10B981; color:white; padding: 4px 14px; border-radius: 20px; font-size: 10px; font-weight: 700;">Flyer
+                2 — Acheteur en attente</span>
+            <div class="flyer-content">
+                <strong style="font-size: 16px; color: #10B981;">J'AI UN ACHETEUR POUR VOTRE QUARTIER !</strong><br><br>
+                Je recherche activement :<br>
+                🏡 <strong>[Type de bien]</strong> dans le quartier <strong>[Nom Quartier]</strong><br>
+                💰 Budget : <strong>[Fourchette]</strong>€<br>
+                👨‍👩‍👧 Profil : <strong>[Famille, Investisseur...]</strong> — financement validé<br><br>
+                Si vous envisagez de vendre (même dans 6 mois), contactez-moi :<br>
+                📞 <strong>[Numéro]</strong> — Discrétion garantie.
+            </div>
+        </div>
+
+        <div class="footer">© MandatMaster — mandatmaster.fr — Tous droits réservés</div>
+    </div>
+
+</body>
+
+</html>

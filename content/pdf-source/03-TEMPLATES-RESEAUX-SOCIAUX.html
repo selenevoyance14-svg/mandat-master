@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            color: #1F2937;
+            line-height: 1.7;
+            font-size: 13px;
+        }
+
+        .cover {
+            page-break-after: always;
+            height: 100vh;
+            background: linear-gradient(135deg, #1D4ED8 0%, #1E3A8A 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+            padding: 60px;
+        }
+
+        .cover .badge {
+            background: #F59E0B;
+            color: #1F2937;
+            padding: 8px 24px;
+            border-radius: 50px;
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 40px;
+        }
+
+        .cover h1 {
+            font-size: 42px;
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 10px;
+        }
+
+        .cover h1 span {
+            color: #F59E0B;
+        }
+
+        .cover .subtitle {
+            font-size: 18px;
+            color: rgba(255, 255, 255, 0.8);
+            margin-top: 20px;
+            max-width: 550px;
+        }
+
+        .cover .footer-cover {
+            position: absolute;
+            bottom: 40px;
+            font-size: 11px;
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .page {
+            padding: 50px 60px;
+            page-break-after: always;
+        }
+
+        .header-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 3px solid #1D4ED8;
+            padding-bottom: 15px;
+            margin-bottom: 35px;
+        }
+
+        .header-bar .logo {
+            font-weight: 900;
+            font-size: 16px;
+            color: #1D4ED8;
+        }
+
+        .header-bar .module {
+            background: #EFF6FF;
+            color: #1D4ED8;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 700;
+        }
+
+        h2 {
+            font-size: 26px;
+            font-weight: 800;
+            color: #1D4ED8;
+            margin-bottom: 20px;
+        }
+
+        h3 {
+            font-size: 17px;
+            font-weight: 700;
+            color: #1F2937;
+            margin-top: 25px;
+            margin-bottom: 10px;
+            padding-left: 15px;
+            border-left: 4px solid #F59E0B;
+        }
+
+        p {
+            margin-bottom: 12px;
+            color: #374151;
+        }
+
+        .post-card {
+            background: #F9FAFB;
+            border: 1px solid #E5E7EB;
+            border-radius: 12px;
+            padding: 25px;
+            margin: 18px 0;
+        }
+
+        .post-card .tag {
+            display: inline-block;
+            background: #1D4ED8;
+            color: white;
+            padding: 4px 14px;
+            border-radius: 20px;
+            font-size: 10px;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+        }
+
+        .post-card .tag.green {
+            background: #10B981;
+        }
+
+        .post-card .tag.amber {
+            background: #F59E0B;
+            color: #1F2937;
+        }
+
+        .post-card .tag.purple {
+            background: #7C3AED;
+        }
+
+        .post-text {
+            background: white;
+            border: 1px solid #E5E7EB;
+            border-radius: 8px;
+            padding: 18px;
+            margin: 10px 0;
+            line-height: 1.9;
+            color: #1F2937;
+            font-size: 12.5px;
+        }
+
+        .post-text .emoji {
+            font-size: 14px;
+        }
+
+        .highlight-box {
+            background: #EFF6FF;
+            border-left: 4px solid #1D4ED8;
+            padding: 15px 20px;
+            margin: 15px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .highlight-box p {
+            margin-bottom: 0;
+        }
+
+        .story-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .story-card {
+            background: linear-gradient(135deg, #EFF6FF, #F0FDF4);
+            border: 1px solid #E5E7EB;
+            border-radius: 12px;
+            padding: 18px;
+            font-size: 12px;
+        }
+
+        .story-card h4 {
+            font-size: 13px;
+            font-weight: 700;
+            color: #1D4ED8;
+            margin-bottom: 8px;
+            margin-top: 0;
+        }
+
+        .footer {
+            text-align: center;
+            color: #9CA3AF;
+            font-size: 10px;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #E5E7EB;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- COUVERTURE -->
+    <div class="cover">
+        <div class="badge">Module 1 — Visibilité</div>
+        <h1>TEMPLATES <span>RÉSEAUX SOCIAUX</span></h1>
+        <p class="subtitle">Posts Facebook, Instagram et LinkedIn prêts à copier-coller. Devenez l'expert immobilier de
+            votre zone en quelques clics.</p>
+        <div class="footer-cover">© MandatMaster — mandatmaster.fr</div>
+    </div>
+
+    <!-- PAGE 1 -->
+    <div class="page">
+        <div class="header-bar">
+            <div class="logo">MANDAT MASTER</div>
+            <div class="module">Module 1 — Réseaux Sociaux</div>
+        </div>
+
+        <h2>📱 Posts Prêts à Publier</h2>
+        <p>Personnalisez les <strong>[champs entre crochets]</strong> et publiez. C'est tout !</p>
+
+        <div class="post-card">
+            <span class="tag">Nouveau Bien — Teasing</span>
+            <div class="post-text">
+                🚨 NOUVEAU SUR LE MARCHÉ !<br>
+                📍 <strong>[Ville/Quartier]</strong><br>
+                🏡 <strong>[Type de bien]</strong><br>
+                ✨ <strong>[Superficie]</strong> m² | 🛏️ <strong>[Nombre]</strong> Chambres | 🌳 <strong>[Atout
+                    majeur]</strong><br><br>
+                Ce bien vient tout juste de nous être confié en exclusivité.<br>
+                Idéal pour <strong>[Cible : Famille, Investisseur...]</strong>.<br><br>
+                💰 Prix : <strong>[Prix]</strong> €<br><br>
+                📅 Les visites commencent <strong>[Jour]</strong>.<br>
+                👉 Envoyez-moi un MP pour bloquer votre créneau en avant-première !<br><br>
+                #immobilier<strong>[Ville]</strong> #avendre #exclusivite
+            </div>
+        </div>
+
+        <div class="post-card">
+            <span class="tag green">Vendu — Preuve Sociale</span>
+            <div class="post-text">
+                ⚡ VENDU EN <strong>[X]</strong> JOURS !<br>
+                📍 <strong>[Ville/Rue]</strong><br><br>
+                Félicitations aux nouveaux propriétaires et un immense merci à mes vendeurs pour leur confiance !
+                🥂<br><br>
+                📉 Vous pensez que le marché est bloqué ?<br>
+                Pas quand le bien est estimé au JUSTE PRIX et présenté avec une stratégie pro.<br><br>
+                🤔 Vous envisagez de vendre ?<br>
+                Contactez-moi pour savoir combien vaut votre bien aujourd'hui.<br><br>
+                #vendu #succes #estimationofferte
+            </div>
+        </div>
+
+        <div class="post-card">
+            <span class="tag amber">Conseil — Éducation Client</span>
+            <div class="post-text">
+                💡 CONSEIL DU JOUR : Vendre vide ou meublé ?<br><br>
+                C'est la question qu'on me pose souvent.<br>
+                👉 Un bien vide permet de voir les volumes... MAIS un bien meublé aide à se projeter !<br><br>
+                Mon astuce : Si vous vendez vide, laissez au moins des repères visuels (rideaux, luminaires) ou optez
+                pour du Home Staging virtuel (que j'offre dans mon mandat exclusif 😉).<br><br>
+                Et vous, vous préféreriez acheter vide ou décoré ? Dites-le en commentaire 👇<br><br>
+                #conseilimmo #homestaging #vendresemieux
+            </div>
+        </div>
+    </div>
+
+    <!-- PAGE 2 -->
+    <div class="page">
+        <div class="header-bar">
+            <div class="logo">MANDAT MASTER</div>
+            <div class="module">Module 1 — Réseaux Sociaux</div>
+        </div>
+
+        <div class="post-card">
+            <span class="tag purple">Personal Branding — Qui suis-je ?</span>
+            <div class="post-text">
+                👋 Et si on faisait connaissance ?<br><br>
+                Pour ceux qui viennent d'arriver, je suis <strong>[Votre Prénom]</strong>.<br>
+                Mon super-pouvoir ? 🦸‍♂️<br>
+                Transformer des "Je vends ma maison" en "Champagne, c'est signé !" à <strong>[Ville]</strong>.<br><br>
+                Ce que j'aime le plus dans mon métier, ce n'est pas les pierres, c'est les histoires de vie qui vont
+                avec.<br><br>
+                Une question sur l'immobilier ? Ma porte (et mes MP) est toujours ouverte !<br><br>
+                #agentimmobilier #viedagent #passionimmo
+            </div>
+        </div>
+
+        <div class="post-card">
+            <span class="tag green">Vendu — Storytelling</span>
+            <div class="post-text">
+                Ils avaient peur de ne pas vendre à temps pour la rentrée...<br><br>
+                M. et Mme <strong>[Nom]</strong> avaient mis leur maison en vente seuls depuis 6 mois. Zéro offre. La
+                mutation approchait.<br><br>
+                On a repris tout à zéro :<br>
+                1. Home Staging (virtuel)<br>
+                2. Prix réajusté<br>
+                3. Visites qualifiées (pas de touristes)<br><br>
+                Résultat : <strong>Vendu en 3 semaines !</strong><br>
+                Leur soulagement fait ma journée. 🙏<br><br>
+                #missionaccomplie
+            </div>
+        </div>
+
+        <div class="post-card">
+            <span class="tag amber">Conseil — DPE</span>
+            <div class="post-text">
+                Le DPE, c'est quoi ce charabia ? 🧐<br><br>
+                A, B, F, G... On s'y perd !<br>
+                Pourtant, une mauvaise lettre peut faire baisser votre prix de <strong>10 à 20%</strong>.<br><br>
+                Saviez-vous que changer <strong>[VMC, Isolation des combles...]</strong> peut parfois suffire à gagner
+                une lettre ?<br><br>
+                Avant de vendre, faites le point. Je vous offre l'audit énergétique si vous signez un mandat ce mois-ci.
+                🎁<br><br>
+                #DPE #renovation #conseilpro
+            </div>
+        </div>
+
+        <h2 style="margin-top: 35px;">📸 Idées de Stories</h2>
+
+        <div class="story-grid">
+            <div class="story-card">
+                <h4>🗳️ Le sondage</h4>
+                <p>Photo cuisine ouverte + Sticker Sondage</p>
+                <p><em>"Grand débat ! Cuisine ouverte ou fermée ? Team convivialité ou odeurs ? Votez 👇"</em></p>
+            </div>
+            <div class="story-card">
+                <h4>🔑 Les coulisses</h4>
+                <p>Boomerang des clés chez le notaire</p>
+                <p><em>"Et une de plus ! Félicitations aux nouveaux proprios ! C'est pour ça que je fais ce métier
+                        ❤️"</em></p>
+            </div>
+            <div class="story-card">
+                <h4>🤫 Le teasing</h4>
+                <p>Photo floutée d'une piscine ou vue</p>
+                <p><em>"Ce qui arrive demain est incroyable. Restez connectés ! 🤫 #nouveaute"</em></p>
+            </div>
+        </div>
+
+        <div class="footer">© MandatMaster — mandatmaster.fr — Tous droits réservés</div>
+    </div>
+
+</body>
+
+</html>
