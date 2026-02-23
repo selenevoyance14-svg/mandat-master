@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: #1F2937;
+            line-height: 1.6;
+            font-size: 12px;
+        }
+
+        .cover {
+            page-break-after: always;
+            height: 100vh;
+            background: linear-gradient(135deg, #1D4ED8 0%, #1E3A8A 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+            padding: 60px;
+        }
+
+        .cover .badge {
+            background: #F59E0B;
+            color: #1F2937;
+            padding: 8px 24px;
+            border-radius: 50px;
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 40px;
+        }
+
+        .cover h1 {
+            font-size: 42px;
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 10px;
+        }
+
+        .cover h1 span {
+            color: #F59E0B;
+        }
+
+        .cover .subtitle {
+            font-size: 16px;
+            color: rgba(255, 255, 255, 0.8);
+            margin-top: 20px;
+            max-width: 550px;
+        }
+
+        .cover .footer-cover {
+            position: absolute;
+            bottom: 40px;
+            font-size: 11px;
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .page {
+            padding: 35px 40px;
+            page-break-after: always;
+        }
+
+        .header-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 3px solid #1D4ED8;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        .header-bar .logo {
+            font-weight: 900;
+            font-size: 14px;
+            color: #1D4ED8;
+        }
+
+        .header-bar .module {
+            background: #EFF6FF;
+            color: #1D4ED8;
+            padding: 5px 14px;
+            border-radius: 20px;
+            font-size: 10px;
+            font-weight: 700;
+        }
+
+        h2 {
+            font-size: 20px;
+            font-weight: 800;
+            color: #1D4ED8;
+            margin-bottom: 12px;
+        }
+
+        p {
+            margin-bottom: 8px;
+            color: #374151;
+            font-size: 11px;
+        }
+
+        .form-section {
+            border: 1px solid #E5E7EB;
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 12px;
+        }
+
+        .form-section h3 {
+            font-size: 12px;
+            font-weight: 700;
+            color: #1D4ED8;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+            margin-bottom: 6px;
+        }
+
+        .form-field {
+            border-bottom: 1px solid #D1D5DB;
+            padding: 4px 0;
+            font-size: 11px;
+        }
+
+        .form-field .field-label {
+            color: #6B7280;
+            font-size: 9px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .form-field-full {
+            border-bottom: 1px solid #D1D5DB;
+            padding: 4px 0;
+            margin-bottom: 6px;
+            font-size: 11px;
+        }
+
+        .form-field-full .field-label {
+            color: #6B7280;
+            font-size: 9px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .checkbox-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 6px;
+            margin: 6px 0;
+        }
+
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 10px;
+        }
+
+        .checkbox-box {
+            width: 14px;
+            height: 14px;
+            border: 2px solid #D1D5DB;
+            border-radius: 3px;
+            flex-shrink: 0;
+        }
+
+        .tracking-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 10px;
+            margin-top: 8px;
+        }
+
+        .tracking-table th {
+            background: #1D4ED8;
+            color: white;
+            padding: 6px 8px;
+            text-align: left;
+            font-size: 9px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .tracking-table td {
+            border: 1px solid #E5E7EB;
+            padding: 10px 8px;
+        }
+
+        .tracking-table tr:nth-child(even) {
+            background: #F9FAFB;
+        }
+
+        .big-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 9px;
+        }
+
+        .big-table th {
+            background: #1D4ED8;
+            color: white;
+            padding: 6px 5px;
+            text-align: center;
+            font-size: 8px;
+            text-transform: uppercase;
+        }
+
+        .big-table td {
+            border: 1px solid #E5E7EB;
+            padding: 14px 5px;
+            text-align: center;
+        }
+
+        .big-table tr:nth-child(even) {
+            background: #F9FAFB;
+        }
+
+        .highlight-box {
+            background: #EFF6FF;
+            border-left: 4px solid #1D4ED8;
+            padding: 10px 14px;
+            margin: 10px 0;
+            border-radius: 0 8px 8px 0;
+            font-size: 10px;
+        }
+
+        .highlight-box p {
+            margin-bottom: 0;
+            font-size: 10px;
+        }
+
+        .footer {
+            text-align: center;
+            color: #9CA3AF;
+            font-size: 9px;
+            margin-top: 20px;
+            padding-top: 12px;
+            border-top: 1px solid #E5E7EB;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="cover">
+        <div class="badge">Module 5 — Organisation</div>
+        <h1>FICHES DE <span>SUIVI</span></h1>
+        <p class="subtitle">Fiche Prospect, Tableau de Bord Hebdomadaire, Suivi Pipeline. Imprimez-les et gardez
+            toujours un œil sur vos chiffres.</p>
+        <div class="footer-cover">© MandatMaster — mandatmaster.fr</div>
+    </div>
+
+    <!-- FICHE PROSPECT (à imprimer x20) -->
+    <div class="page">
+        <div class="header-bar">
+            <div class="logo">MANDAT MASTER</div>
+            <div class="module">Fiche Prospect — À imprimer</div>
+        </div>
+
+        <h2>📋 Fiche Prospect Vendeur</h2>
+        <p><em>Imprimez plusieurs exemplaires. Remplissez une fiche par prospect. Classez-les par statut (Chaud / Tiède
+                / Froid).</em></p>
+
+        <div class="form-section">
+            <h3>👤 Informations Contact</h3>
+            <div class="form-row">
+                <div class="form-field"><span class="field-label">Nom Complet</span><br>&nbsp;</div>
+                <div class="form-field"><span class="field-label">Téléphone</span><br>&nbsp;</div>
+            </div>
+            <div class="form-row">
+                <div class="form-field"><span class="field-label">Email</span><br>&nbsp;</div>
+                <div class="form-field"><span class="field-label">Source (Pige / Porte / Recommandation /
+                        Web)</span><br>&nbsp;</div>
+            </div>
+            <div class="form-field-full"><span class="field-label">Date du 1er contact</span><br>&nbsp;</div>
+        </div>
+
+        <div class="form-section">
+            <h3>🏠 Informations Bien</h3>
+            <div class="form-row">
+                <div class="form-field"><span class="field-label">Adresse du Bien</span><br>&nbsp;</div>
+                <div class="form-field"><span class="field-label">Type (Maison / Appart / Terrain)</span><br>&nbsp;
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-field"><span class="field-label">Surface (m²)</span><br>&nbsp;</div>
+                <div class="form-field"><span class="field-label">Nb Pièces / Chambres</span><br>&nbsp;</div>
+            </div>
+            <div class="form-row">
+                <div class="form-field"><span class="field-label">DPE</span><br>&nbsp;</div>
+                <div class="form-field"><span class="field-label">Année Construction</span><br>&nbsp;</div>
+            </div>
+            <div class="form-field-full"><span class="field-label">Atouts Principaux</span><br>&nbsp;</div>
+            <div class="form-field-full"><span class="field-label">Points Faibles</span><br>&nbsp;</div>
+        </div>
+
+        <div class="form-section">
+            <h3>💰 Estimation & Projet</h3>
+            <div class="form-row">
+                <div class="form-field"><span class="field-label">Prix souhaité par le vendeur</span><br>&nbsp;</div>
+                <div class="form-field"><span class="field-label">Notre estimation</span><br>&nbsp;</div>
+            </div>
+            <div class="form-field-full"><span class="field-label">Raison de la vente</span><br>&nbsp;</div>
+            <div class="form-field-full"><span class="field-label">Délai souhaité</span><br>&nbsp;</div>
+            <div class="form-section" style="border:none;padding:0;margin-top:8px;">
+                <span class="field-label">Statut actuel</span>
+                <div class="checkbox-grid">
+                    <div class="checkbox-item">
+                        <div class="checkbox-box"></div> Pige (1er appel)
+                    </div>
+                    <div class="checkbox-item">
+                        <div class="checkbox-box"></div> RDV estimation pris
+                    </div>
+                    <div class="checkbox-item">
+                        <div class="checkbox-box"></div> Estimation faite
+                    </div>
+                    <div class="checkbox-item">
+                        <div class="checkbox-box"></div> En réflexion
+                    </div>
+                    <div class="checkbox-item">
+                        <div class="checkbox-box"></div> Mandat signé ✅
+                    </div>
+                    <div class="checkbox-item">
+                        <div class="checkbox-box"></div> Perdu ❌
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-section">
+            <h3>📝 Historique des interactions</h3>
+            <table class="tracking-table">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Action (Appel/SMS/Email/RDV)</th>
+                        <th>Résultat & Notes</th>
+                        <th>Prochaine action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="footer">© MandatMaster — Imprimez cette fiche autant de fois que nécessaire</div>
+    </div>
+
+    <!-- TABLEAU DE BORD HEBDOMADAIRE -->
+    <div class="page">
+        <div class="header-bar">
+            <div class="logo">MANDAT MASTER</div>
+            <div class="module">Tableau de Bord</div>
+        </div>
+
+        <h2>📊 Tableau de Bord Hebdomadaire</h2>
+        <p><em>Imprimez un exemplaire par semaine. Remplissez-le chaque vendredi. En 5 minutes, vous savez exactement où
+                vous en êtes.</em></p>
+
+        <div class="form-section">
+            <h3>🗓️ Semaine du ___/___/______ au ___/___/______</h3>
+
+            <table class="big-table">
+                <thead>
+                    <tr>
+                        <th>Métrique</th>
+                        <th>Lundi</th>
+                        <th>Mardi</th>
+                        <th>Mercredi</th>
+                        <th>Jeudi</th>
+                        <th>Vendredi</th>
+                        <th>Samedi</th>
+                        <th>TOTAL</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td style="text-align:left;font-weight:700;">📞 Appels pige</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align:left;font-weight:700;">💬 SMS envoyés</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align:left;font-weight:700;">📧 Emails envoyés</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align:left;font-weight:700;">📅 RDV estimation pris</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align:left;font-weight:700;">🏠 Estimations réalisées</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align:left;font-weight:700;">✍️ Mandats signés</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align:left;font-weight:700;">👀 Visites acheteurs</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align:left;font-weight:700;">📱 Posts publiés</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="form-section">
+            <h3>🎯 Objectifs vs Résultats</h3>
+            <table class="tracking-table">
+                <thead>
+                    <tr>
+                        <th>KPI</th>
+                        <th>Objectif Semaine</th>
+                        <th>Réalisé</th>
+                        <th>Écart</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Appels de pige</td>
+                        <td style="text-align:center;">30</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>RDV estimation</td>
+                        <td style="text-align:center;">3</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Mandats signés</td>
+                        <td style="text-align:center;">1</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Posts réseaux sociaux</td>
+                        <td style="text-align:center;">5</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="form-section">
+            <h3>📈 Pipeline Actuel</h3>
+            <table class="tracking-table">
+                <thead>
+                    <tr>
+                        <th>Statut</th>
+                        <th>Prospect 1</th>
+                        <th>Prospect 2</th>
+                        <th>Prospect 3</th>
+                        <th>Prospect 4</th>
+                        <th>Prospect 5</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td style="font-weight:700;">🔴 Froid</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight:700;">🟡 Tiède</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight:700;">🟢 Chaud</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight:700;">✅ Signé</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="form-section">
+            <h3>✏️ Notes & Actions Semaine Prochaine</h3>
+            <div
+                style="border: 1px solid #E5E7EB; border-radius: 8px; padding: 15px; min-height: 100px; background: #F9FAFB;">
+                <p style="color:#9CA3AF;font-size:10px;">Qu'est-ce qui a bien fonctionné ? Qu'est-ce que je dois
+                    améliorer ? Quelles sont mes 3 priorités pour la semaine prochaine ?</p>
+            </div>
+        </div>
+
+        <div class="highlight-box">
+            <p><strong>🏆 Règle des top performers :</strong> 30 appels/semaine → 3 RDV estimation → 1 mandat signé. Si
+                vous faites ces chiffres régulièrement, vous signerez 4 mandats/mois = plus de 40 000€/an de
+                commissions.</p>
+        </div>
+
+        <div class="footer">© MandatMaster — Imprimez un exemplaire par semaine</div>
+    </div>
+
+</body>
+
+</html>

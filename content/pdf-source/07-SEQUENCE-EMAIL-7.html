@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: #1F2937;
+            line-height: 1.7;
+            font-size: 12.5px;
+        }
+
+        .cover {
+            page-break-after: always;
+            height: 100vh;
+            background: linear-gradient(135deg, #1D4ED8 0%, #1E3A8A 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+            padding: 60px;
+        }
+
+        .cover .badge {
+            background: #F59E0B;
+            color: #1F2937;
+            padding: 8px 24px;
+            border-radius: 50px;
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 40px;
+        }
+
+        .cover h1 {
+            font-size: 40px;
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 10px;
+        }
+
+        .cover h1 span {
+            color: #F59E0B;
+        }
+
+        .cover .subtitle {
+            font-size: 16px;
+            color: rgba(255, 255, 255, 0.8);
+            margin-top: 20px;
+            max-width: 550px;
+        }
+
+        .cover .footer-cover {
+            position: absolute;
+            bottom: 40px;
+            font-size: 11px;
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .page {
+            padding: 45px 55px;
+            page-break-after: always;
+        }
+
+        .header-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 3px solid #1D4ED8;
+            padding-bottom: 12px;
+            margin-bottom: 30px;
+        }
+
+        .header-bar .logo {
+            font-weight: 900;
+            font-size: 15px;
+            color: #1D4ED8;
+        }
+
+        .header-bar .module {
+            background: #EFF6FF;
+            color: #1D4ED8;
+            padding: 5px 14px;
+            border-radius: 20px;
+            font-size: 10px;
+            font-weight: 700;
+        }
+
+        h2 {
+            font-size: 24px;
+            font-weight: 800;
+            color: #1D4ED8;
+            margin-bottom: 18px;
+        }
+
+        h3 {
+            font-size: 15px;
+            font-weight: 700;
+            color: #1F2937;
+            margin-top: 20px;
+            margin-bottom: 8px;
+            padding-left: 12px;
+            border-left: 4px solid #F59E0B;
+        }
+
+        p {
+            margin-bottom: 10px;
+            color: #374151;
+        }
+
+        .email-box {
+            background: #F9FAFB;
+            border: 1px solid #E5E7EB;
+            border-radius: 12px;
+            padding: 22px;
+            margin: 14px 0;
+        }
+
+        .email-box .label {
+            background: #1D4ED8;
+            color: white;
+            padding: 4px 14px;
+            border-radius: 20px;
+            font-size: 10px;
+            font-weight: 700;
+            display: inline-block;
+            margin-bottom: 8px;
+        }
+
+        .email-header {
+            background: #EFF6FF;
+            border-radius: 8px;
+            padding: 12px 16px;
+            margin: 8px 0;
+            font-size: 11px;
+        }
+
+        .email-header strong {
+            color: #1D4ED8;
+        }
+
+        .email-body {
+            background: white;
+            border: 1px solid #E5E7EB;
+            border-radius: 8px;
+            padding: 18px;
+            margin: 8px 0;
+            font-style: italic;
+            line-height: 1.9;
+        }
+
+        .highlight-box {
+            background: #EFF6FF;
+            border-left: 4px solid #1D4ED8;
+            padding: 12px 18px;
+            margin: 14px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .highlight-box.warning {
+            background: #FEF3C7;
+            border-left-color: #F59E0B;
+        }
+
+        .highlight-box.success {
+            background: #ECFDF5;
+            border-left-color: #10B981;
+        }
+
+        .highlight-box p {
+            margin-bottom: 0;
+        }
+
+        .timeline {
+            position: relative;
+            padding-left: 30px;
+            margin: 15px 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 8px;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: #DBEAFE;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 12px;
+            padding-left: 15px;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -26px;
+            top: 6px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #1D4ED8;
+            border: 3px solid #DBEAFE;
+        }
+
+        .timeline-item .day-label {
+            font-weight: 700;
+            color: #1D4ED8;
+            font-size: 11px;
+        }
+
+        .footer {
+            text-align: center;
+            color: #9CA3AF;
+            font-size: 9px;
+            margin-top: 30px;
+            padding-top: 15px;
+            border-top: 1px solid #E5E7EB;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="cover">
+        <div class="badge">Module 4 — Nurturing</div>
+        <h1>SÉQUENCE <span>EMAIL</span></h1>
+        <h1 style="font-size:36px;">7 EMAILS</h1>
+        <p class="subtitle">Une séquence complète sur 2 mois pour transformer un prospect froid en client signé.
+            Copiez-collez et programmez.</p>
+        <div class="footer-cover">© MandatMaster — mandatmaster.fr</div>
+    </div>
+
+    <!-- PAGE 1 -->
+    <div class="page">
+        <div class="header-bar">
+            <div class="logo">MANDAT MASTER</div>
+            <div class="module">Module 4 — Emails</div>
+        </div>
+
+        <h2>📧 La Séquence Complète</h2>
+
+        <div class="highlight-box">
+            <p><strong>📅 Planning d'envoi :</strong> J+0 (après estimation) → J+3 → J+7 → J+14 → J+30 → J+45 → J+60</p>
+        </div>
+
+        <div class="timeline">
+            <div class="timeline-item"><span class="day-label">J+0</span> — Email de remerciement (après estimation)
+            </div>
+            <div class="timeline-item"><span class="day-label">J+3</span> — Valeur ajoutée (rapport marché)</div>
+            <div class="timeline-item"><span class="day-label">J+7</span> — Preuve sociale (témoignage)</div>
+            <div class="timeline-item"><span class="day-label">J+14</span> — Relance douce (actualité)</div>
+            <div class="timeline-item"><span class="day-label">J+30</span> — Mise à jour estimation</div>
+            <div class="timeline-item"><span class="day-label">J+45</span> — Urgence (bien vendu dans le quartier)</div>
+            <div class="timeline-item"><span class="day-label">J+60</span> — Dernier contact (rupture douce)</div>
+        </div>
+
+        <div class="email-box">
+            <div class="label">Email 1 — J+0 : Remerciement post-estimation</div>
+            <div class="email-header">
+                <strong>Objet :</strong> Votre estimation — [Adresse du Bien]<br>
+                <strong>Envoi :</strong> Le soir même de l'estimation
+            </div>
+            <div class="email-body">
+                Bonjour [Prénom],<br><br>
+                Merci de m'avoir accueilli chez vous aujourd'hui. C'était un plaisir de découvrir votre bien — il a un
+                vrai potentiel sur le marché actuel.<br><br>
+                Comme convenu, voici le récapitulatif de mon analyse :<br><br>
+                📊 <strong>Estimation : [Fourchette basse] — [Fourchette haute] €</strong><br>
+                📍 Basée sur [X] biens vendus dans votre quartier ces 6 derniers mois.<br><br>
+                Si vous décidez d'avancer, voici ce que je mets en place dans les 48h :<br>
+                ✅ Séance photo professionnelle<br>
+                ✅ Rédaction de l'annonce optimisée<br>
+                ✅ Diffusion sur mes réseaux + fichier acquéreurs<br><br>
+                Je reste à votre disposition pour toute question.<br><br>
+                Bien à vous,<br>
+                [Votre Signature avec téléphone]
+            </div>
+        </div>
+
+        <div class="email-box">
+            <div class="label">Email 2 — J+3 : Valeur ajoutée</div>
+            <div class="email-header">
+                <strong>Objet :</strong> Le marché immobilier à [Ville] — Ce que disent les chiffres<br>
+                <strong>Envoi :</strong> 3 jours après l'estimation
+            </div>
+            <div class="email-body">
+                Bonjour [Prénom],<br><br>
+                Suite à notre rencontre, j'ai pensé que ces données vous intéresseraient :<br><br>
+                📈 <strong>Tendance du marché à [Ville] :</strong><br>
+                • Prix moyen au m² : [X] € (+/- [X]% sur 12 mois)<br>
+                • Délai de vente moyen : [X] jours<br>
+                • Nombre de biens en vente : [X] (votre concurrence directe)<br><br>
+                <strong>Ce que cela signifie pour vous :</strong><br>
+                Le marché est [favorable/compétitif]. Les biens au juste prix se vendent en moins de [X] jours. Ceux qui
+                "testent" un prix haut restent 3-6 mois et finissent par vendre en dessous du prix marché.<br><br>
+                Mon conseil : si vous souhaitez vendre, le timing actuel est [bon/correct/excellent] parce que
+                [raison].<br><br>
+                On en reparle quand vous voulez.<br><br>
+                [Votre Signature]
+            </div>
+        </div>
+    </div>
+
+    <!-- PAGE 2 -->
+    <div class="page">
+        <div class="header-bar">
+            <div class="logo">MANDAT MASTER</div>
+            <div class="module">Module 4 — Emails</div>
+        </div>
+
+        <div class="email-box">
+            <div class="label">Email 3 — J+7 : Preuve sociale</div>
+            <div class="email-header">
+                <strong>Objet :</strong> Vendu en [X] jours — voici comment<br>
+                <strong>Envoi :</strong> 1 semaine après l'estimation
+            </div>
+            <div class="email-body">
+                Bonjour [Prénom],<br><br>
+                Je voulais partager une petite victoire avec vous.<br><br>
+                Je viens de finaliser la vente d'un bien similaire au vôtre, situé à [Quartier/Rue] :<br><br>
+                🏡 <strong>[Type de bien]</strong>, [X]m²<br>
+                ⏱️ Vendu en <strong>[X] jours</strong><br>
+                💰 À <strong>[X]%</strong> du prix affiché<br>
+                📝 <strong>[X] offres</strong> reçues<br><br>
+                <strong>Ma stratégie ?</strong><br>
+                1. Photos HDR professionnelles (l'annonce a reçu 3x plus de clics)<br>
+                2. Diffusion off-market sur mon fichier acquéreurs avant la mise en ligne publique<br>
+                3. Visites groupées le samedi (créer la concurrence)<br><br>
+                Votre bien mérite la même attention. Si vous souhaitez en discuter, je suis disponible par téléphone
+                cette semaine.<br><br>
+                [Votre Signature]
+            </div>
+        </div>
+
+        <div class="email-box">
+            <div class="label">Email 4 — J+14 : Relance douce</div>
+            <div class="email-header">
+                <strong>Objet :</strong> Des nouvelles de votre projet ?<br>
+                <strong>Envoi :</strong> 2 semaines après l'estimation
+            </div>
+            <div class="email-body">
+                Bonjour [Prénom],<br><br>
+                Je me permets de prendre de vos nouvelles concernant votre projet de vente.<br><br>
+                J'imagine que la réflexion prend du temps — c'est une décision importante, et c'est tout à fait
+                normal.<br><br>
+                Je voulais simplement vous informer que j'ai eu <strong>[X] nouvelles demandes d'acheteurs</strong>
+                cette semaine pour votre secteur. Certains profils correspondraient parfaitement à votre bien.<br><br>
+                Si vous souhaitez avancer, je peux organiser les premières visites en moins de 48h. Si vous n'êtes pas
+                prêt, aucun souci — je reste votre interlocuteur quand le moment sera venu.<br><br>
+                Bonne continuation,<br>
+                [Votre Signature]
+            </div>
+        </div>
+
+        <div class="email-box">
+            <div class="label">Email 5 — J+30 : Mise à jour</div>
+            <div class="email-header">
+                <strong>Objet :</strong> Mise à jour de votre estimation — Le marché a bougé<br>
+                <strong>Envoi :</strong> 1 mois après l'estimation
+            </div>
+            <div class="email-body">
+                Bonjour [Prénom],<br><br>
+                Cela fait maintenant un mois que nous nous sommes vus pour l'estimation de votre bien. Le marché a
+                légèrement évolué depuis :<br><br>
+                • [X] biens similaires ont été vendus dans votre secteur<br>
+                • Le prix moyen est [en hausse/stable/en légère baisse]<br>
+                • Le délai de vente moyen est passé de [X] à [X] jours<br><br>
+                <strong>Votre estimation reste dans la fourchette [X — X] €</strong>, mais je recommanderais d'ajuster
+                le prix d'affichage à [X] € pour maximiser l'intérêt des premiers jours.<br><br>
+                Le marché récompense ceux qui agissent au bon moment. Si vous souhaitez relancer le sujet, un simple
+                appel suffit.<br><br>
+                [Votre Signature]
+            </div>
+        </div>
+    </div>
+
+    <!-- PAGE 3 -->
+    <div class="page">
+        <div class="header-bar">
+            <div class="logo">MANDAT MASTER</div>
+            <div class="module">Module 4 — Emails</div>
+        </div>
+
+        <div class="email-box">
+            <div class="label">Email 6 — J+45 : Urgence douce</div>
+            <div class="email-header">
+                <strong>Objet :</strong> [Adresse similaire] vient d'être vendu à côté de chez vous<br>
+                <strong>Envoi :</strong> 6 semaines après l'estimation
+            </div>
+            <div class="email-body">
+                Bonjour [Prénom],<br><br>
+                Je voulais vous informer : un bien très similaire au vôtre vient d'être vendu à [X] mètres de chez
+                vous.<br><br>
+                📍 <strong>[Adresse approximative]</strong><br>
+                💰 <strong>[Prix de vente]</strong> €<br>
+                ⏱️ <strong>[X] jours</strong> sur le marché<br><br>
+                Ce qui est intéressant, c'est que l'acheteur cherchait initialement un bien comme le vôtre, mais il n'a
+                pas trouvé. Il reste <strong>3 acquéreurs qualifiés</strong> de ma base qui recherchent activement dans
+                votre quartier.<br><br>
+                Si votre projet est toujours d'actualité, c'est peut-être le bon moment pour en profiter avant que ces
+                acquéreurs trouvent ailleurs.<br><br>
+                Un appel de 5 minutes suffit pour relancer le processus.<br><br>
+                [Votre Signature]
+            </div>
+        </div>
+
+        <div class="email-box">
+            <div class="label">Email 7 — J+60 : Dernier contact</div>
+            <div class="email-header">
+                <strong>Objet :</strong> Je referme votre dossier (sauf si...)<br>
+                <strong>Envoi :</strong> 2 mois après l'estimation
+            </div>
+            <div class="email-body">
+                Bonjour [Prénom],<br><br>
+                Cela fait 2 mois que nous avons échangé sur votre projet de vente, et je n'ai pas eu de retour de votre
+                part depuis.<br><br>
+                Je comprends parfaitement — les priorités changent, et ce n'est peut-être plus le bon moment.<br><br>
+                Je vais classer votre dossier pour l'instant, mais sachez que <strong>je reste votre interlocuteur
+                    dédié</strong> sur votre secteur. Si dans 6 mois ou 2 ans la question se repose, appelez-moi — je
+                pourrai vous donner une estimation actualisée en quelques jours.<br><br>
+                En attendant, je vous souhaite le meilleur pour vos projets.<br><br>
+                Amicalement,<br>
+                [Votre Prénom]<br><br>
+                PS : Si vous connaissez quelqu'un qui envisage de vendre, n'hésitez pas à me recommander. Le
+                bouche-à-oreille est mon meilleur allié. 🙏
+            </div>
+            <div class="highlight-box success">
+                <p><strong>🔑 Pourquoi l'email "rupture" marche :</strong> En annonçant que vous fermez le dossier, vous
+                    créez un sentiment de perte. 20% des prospects répondent à cet email pour dire "attendez, on n'a pas
+                    abandonné !" — c'est le plus efficace de la séquence.</p>
+            </div>
+        </div>
+
+        <div class="highlight-box warning" style="margin-top:20px;">
+            <p><strong>💡 Comment programmer :</strong> Utilisez un outil gratuit comme <strong>Brevo</strong>
+                (ex-Sendinblue) ou <strong>Mailchimp</strong> (gratuit jusqu'à 500 contacts). Créez la séquence une
+                seule fois, et chaque nouveau prospect entre automatiquement dans le tunnel.</p>
+        </div>
+
+        <div class="footer">© MandatMaster — mandatmaster.fr — Tous droits réservés</div>
+    </div>
+
+</body>
+
+</html>

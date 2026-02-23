@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: #1F2937;
+            line-height: 1.7;
+            font-size: 12.5px;
+        }
+
+        .cover {
+            page-break-after: always;
+            height: 100vh;
+            background: linear-gradient(135deg, #1D4ED8 0%, #1E3A8A 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+            padding: 60px;
+        }
+
+        .cover .badge {
+            background: #F59E0B;
+            color: #1F2937;
+            padding: 8px 24px;
+            border-radius: 50px;
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 40px;
+        }
+
+        .cover h1 {
+            font-size: 42px;
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 10px;
+        }
+
+        .cover h1 span {
+            color: #F59E0B;
+        }
+
+        .cover .subtitle {
+            font-size: 16px;
+            color: rgba(255, 255, 255, 0.8);
+            margin-top: 20px;
+            max-width: 550px;
+        }
+
+        .cover .footer-cover {
+            position: absolute;
+            bottom: 40px;
+            font-size: 11px;
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .page {
+            padding: 45px 55px;
+            page-break-after: always;
+        }
+
+        .header-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 3px solid #1D4ED8;
+            padding-bottom: 12px;
+            margin-bottom: 30px;
+        }
+
+        .header-bar .logo {
+            font-weight: 900;
+            font-size: 15px;
+            color: #1D4ED8;
+        }
+
+        .header-bar .module {
+            background: #EFF6FF;
+            color: #1D4ED8;
+            padding: 5px 14px;
+            border-radius: 20px;
+            font-size: 10px;
+            font-weight: 700;
+        }
+
+        h2 {
+            font-size: 24px;
+            font-weight: 800;
+            color: #1D4ED8;
+            margin-bottom: 18px;
+        }
+
+        h3 {
+            font-size: 16px;
+            font-weight: 700;
+            color: #1F2937;
+            margin-top: 22px;
+            margin-bottom: 10px;
+            padding-left: 12px;
+            border-left: 4px solid #F59E0B;
+        }
+
+        h4 {
+            font-size: 13px;
+            font-weight: 700;
+            color: #374151;
+            margin-top: 15px;
+            margin-bottom: 6px;
+        }
+
+        p {
+            margin-bottom: 10px;
+            color: #374151;
+        }
+
+        .script-box {
+            background: #F9FAFB;
+            border: 1px solid #E5E7EB;
+            border-radius: 12px;
+            padding: 22px;
+            margin: 14px 0;
+        }
+
+        .script-box .label {
+            background: #1D4ED8;
+            color: white;
+            padding: 4px 14px;
+            border-radius: 20px;
+            font-size: 10px;
+            font-weight: 700;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+
+        .script-box .label.green {
+            background: #10B981;
+        }
+
+        .script-box .label.amber {
+            background: #F59E0B;
+            color: #1F2937;
+        }
+
+        .script-box .label.purple {
+            background: #7C3AED;
+        }
+
+        .script-text {
+            background: white;
+            border-left: 4px solid #F59E0B;
+            padding: 14px 18px;
+            margin: 10px 0;
+            border-radius: 0 8px 8px 0;
+            font-style: italic;
+            color: #1F2937;
+            line-height: 1.8;
+        }
+
+        .highlight-box {
+            background: #EFF6FF;
+            border-left: 4px solid #1D4ED8;
+            padding: 14px 18px;
+            margin: 14px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .highlight-box.success {
+            background: #ECFDF5;
+            border-left-color: #10B981;
+        }
+
+        .highlight-box.warning {
+            background: #FEF3C7;
+            border-left-color: #F59E0B;
+        }
+
+        .highlight-box p {
+            margin-bottom: 0;
+        }
+
+        ul,
+        ol {
+            margin: 8px 0;
+            padding-left: 22px;
+        }
+
+        li {
+            margin-bottom: 5px;
+        }
+
+        .footer {
+            text-align: center;
+            color: #9CA3AF;
+            font-size: 9px;
+            margin-top: 30px;
+            padding-top: 15px;
+            border-top: 1px solid #E5E7EB;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="cover">
+        <div class="badge">Module 2 — Avancé</div>
+        <h1>SCRIPTS <span>AVANCÉS</span></h1>
+        <p class="subtitle">Porte-à-porte, journées portes ouvertes, relance notaire, suivi après-visite, partenariats.
+            Les scripts des agents qui signent chaque semaine.</p>
+        <div class="footer-cover">© MandatMaster — mandatmaster.fr</div>
+    </div>
+
+    <!-- PAGE 1 : PORTE A PORTE -->
+    <div class="page">
+        <div class="header-bar">
+            <div class="logo">MANDAT MASTER</div>
+            <div class="module">Scripts Avancés</div>
+        </div>
+
+        <h2>🚪 Script Porte-à-Porte (Farming)</h2>
+        <p>Le farming, c'est travailler une zone géographique précise jusqu'à devenir L'AGENT de référence. Le
+            porte-à-porte est le canal le plus puissant.</p>
+
+        <div class="script-box">
+            <div class="label">Approche "L'Expert du Quartier"</div>
+            <h4>Contexte : Vous sonnez sans RDV dans votre zone de farming.</h4>
+
+            <div class="script-text">
+                <em>(Sonnette, sourire, pas en arrière pour ne pas envahir)</em><br><br>
+                "Bonjour ! Je suis <strong>[Prénom]</strong>, agent immobilier sur le quartier <strong>[Nom
+                    Quartier]</strong>. Je ne viens pas vous vendre quoi que ce soit, rassurez-vous !<br><br>
+                Je fais le tour du quartier parce que j'ai <strong>3 familles</strong> qui cherchent à s'installer ici —
+                et il n'y a plus rien à vendre.<br><br>
+                Est-ce que vous, ou peut-être un voisin, auriez envisagé un projet immobilier dans les prochains mois ?"
+            </div>
+
+            <p><em>(Si "Non, on ne vend pas")</em> :</p>
+            <div class="script-text">
+                "Pas de souci du tout ! C'est un beau quartier, je comprends qu'on veuille y rester. Tenez, voici ma
+                carte. Si jamais un jour la question se pose, ou si un voisin en parle, n'hésitez pas.<br><br>
+                Au fait, est-ce que vous savez combien vaut votre maison dans le marché actuel ? Je peux vous donner une
+                indication rapide si ça vous intéresse — c'est gratuit et sans engagement."
+            </div>
+
+            <div class="highlight-box success">
+                <p><strong>🔑 Clés :</strong> Pas en arrière après qu'ils ouvrent (moins menaçant). Mentionner les "3
+                    familles" crée l'urgence. La carte = vous plantez votre drapeau. L'offre d'estimation gratuite =
+                    vous créez un futur RDV.</p>
+            </div>
+        </div>
+
+        <div class="script-box">
+            <div class="label green">Après une vente dans le quartier</div>
+            <h4>Contexte : Vous venez de conclure une vente dans la rue. Profitez-en !</h4>
+
+            <div class="script-text">
+                "Bonjour, je suis <strong>[Prénom]</strong>. Je viens de vendre la maison au numéro <strong>[X]</strong>
+                de votre rue — peut-être que vous avez vu les visites ces dernières semaines ?<br><br>
+                La bonne nouvelle, c'est que le bien s'est vendu <strong>au-dessus du prix affiché</strong> grâce à une
+                mise en concurrence. Ça veut dire que votre quartier est très demandé !<br><br>
+                Si vous êtes curieux de savoir combien vaut votre maison dans ce contexte, je peux vous faire une
+                estimation gratuite. Ça prend 20 minutes, et ça n'engage à rien."
+            </div>
+        </div>
+    </div>
+
+    <!-- PAGE 2 : OPEN HOUSE -->
+    <div class="page">
+        <div class="header-bar">
+            <div class="logo">MANDAT MASTER</div>
+            <div class="module">Scripts Avancés</div>
+        </div>
+
+        <h2>🏠 Script Journée Portes Ouvertes (Open House)</h2>
+
+        <div class="script-box">
+            <div class="label">Accueil des visiteurs</div>
+            <div class="script-text">
+                "Bienvenue ! Je suis <strong>[Prénom]</strong>. Prenez votre temps pour visiter, je suis là si vous avez
+                des questions.<br><br>
+                Juste avant de commencer — puis-je avoir votre prénom et un numéro pour vous recontacter si d'autres
+                biens similaires se présentent ? C'est uniquement pour vous, pas de spam promis."
+            </div>
+            <div class="highlight-box warning">
+                <p><strong>⚠️ Impératif :</strong> Récupérez TOUJOURS le nom + téléphone + email. Pas de visite anonyme.
+                    Utilisez la fiche de suivi (Module 7).</p>
+            </div>
+        </div>
+
+        <div class="script-box">
+            <div class="label green">Pendant la visite — Questions de qualification</div>
+            <p>Posez ces questions naturellement, comme une conversation :</p>
+            <ul>
+                <li><em>"Vous cherchez depuis longtemps ?"</em> → Indique l'urgence</li>
+                <li><em>"C'est pour habiter ou investir ?"</em> → Adapte votre discours</li>
+                <li><em>"Vous avez déjà vu votre banque ?"</em> → Vérifie le financement</li>
+                <li><em>"Qu'est-ce qui vous plaît le plus dans ce bien ?"</em> → Identifie les critères</li>
+                <li><em>"Qu'est-ce qui manquerait pour que ce soit parfait ?"</em> → Objections futures</li>
+            </ul>
+        </div>
+
+        <div class="script-box">
+            <div class="label amber">Closing après visite</div>
+            <h4>Si l'acheteur est intéressé mais hésite :</h4>
+            <div class="script-text">
+                "Je comprends que vous vouliez réfléchir. C'est une décision importante.<br><br>
+                En toute transparence, j'ai <strong>[X] autres visites prévues</strong> cette semaine pour ce bien. Si
+                vous êtes intéressé, je vous recommande de me faire une offre rapidement — même conditionnelle. Ça ne
+                vous engage pas juridiquement avant le compromis, mais ça vous positionne."
+            </div>
+        </div>
+
+        <h2 style="margin-top: 30px;">📞 Script Relance Notaire</h2>
+
+        <div class="script-box">
+            <div class="label purple">Prise de contact avec un notaire</div>
+            <h4>Objectif : Créer un partenariat de recommandation mutuelle.</h4>
+            <div class="script-text">
+                "Bonjour Maître, je suis <strong>[Prénom Nom]</strong>, agent immobilier sur
+                <strong>[Ville]</strong>.<br><br>
+                Je me permets de vous contacter car j'accompagne beaucoup de vendeurs dans votre secteur, et je serais
+                ravi de travailler en bonne intelligence avec votre étude.<br><br>
+                Parfois, des clients viennent vous voir pour des successions ou des divorces qui impliquent la vente
+                d'un bien. Si vous cherchez un agent de confiance à qui les orienter, je serais disponible.<br><br>
+                En échange, je recommande systématiquement votre étude à mes clients pour les compromis et actes. On
+                pourrait se rencontrer autour d'un café pour en discuter ?"
+            </div>
+            <div class="highlight-box success">
+                <p><strong>🔑 Clé :</strong> Les notaires sont la source n°1 de mandats de qualité (successions,
+                    divorces). Un seul notaire partenaire peut générer 3-5 mandats par an.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- PAGE 3 : APRÈS-VISITE + PARTENARIATS -->
+    <div class="page">
+        <div class="header-bar">
+            <div class="logo">MANDAT MASTER</div>
+            <div class="module">Scripts Avancés</div>
+        </div>
+
+        <h2>📱 Scripts Suivi Après-Visite</h2>
+
+        <div class="script-box">
+            <div class="label">SMS/WhatsApp — J+1 après visite acheteur</div>
+            <div class="script-text">
+                "Bonjour <strong>[Prénom]</strong>, c'est <strong>[Votre Prénom]</strong>. J'espère que la visite d'hier
+                vous a plu ! Avez-vous eu le temps d'en discuter ? Si vous avez des questions, je suis disponible. Bonne
+                journée !"
+            </div>
+        </div>
+
+        <div class="script-box">
+            <div class="label">Appel — J+3 si pas de réponse</div>
+            <div class="script-text">
+                "Bonjour <strong>[Prénom]</strong>, c'est <strong>[Votre Prénom]</strong> pour le bien de
+                <strong>[Adresse]</strong>.<br><br>
+                Je voulais prendre de vos nouvelles — est-ce que ce bien correspond à ce que vous cherchez ?<br><br>
+                <em>(Si non)</em> : Pas de problème. Qu'est-ce qui manquait ? J'ai peut-être autre chose qui
+                correspondrait mieux..."
+            </div>
+        </div>
+
+        <div class="script-box">
+            <div class="label green">Appel — Rapport au vendeur (hebdomadaire)</div>
+            <h4>Objectif : Garder le vendeur informé pour éviter qu'il mette fin au mandat.</h4>
+            <div class="script-text">
+                "Bonjour <strong>[Nom Vendeur]</strong>, c'est <strong>[Votre Prénom]</strong> pour le point
+                hebdomadaire de votre bien.<br><br>
+                Cette semaine :<br>
+                • <strong>[X]</strong> contacts entrants sur l'annonce<br>
+                • <strong>[X]</strong> visites effectuées<br>
+                • Retours : <strong>[Synthèse honnête]</strong><br><br>
+                <em>(Si peu de visites)</em> : Le marché réagit doucement. Voici ce que je propose pour booster la
+                visibilité : <strong>[Action concrète]</strong>."
+            </div>
+            <div class="highlight-box warning">
+                <p><strong>⚠️ Règle d'or :</strong> Appelez votre vendeur CHAQUE SEMAINE, même s'il ne se passe rien. Le
+                    silence est la raison n°1 de rupture de mandat. Un vendeur informé est un vendeur fidèle.</p>
+            </div>
+        </div>
+
+        <h2 style="margin-top: 30px;">🤝 Scripts Partenariats Locaux</h2>
+
+        <div class="script-box">
+            <div class="label purple">Approche commerçant / artisan</div>
+            <div class="script-text">
+                "Bonjour <strong>[Prénom]</strong>, je suis agent immobilier sur le quartier et je me disais qu'on
+                pourrait s'entraider.<br><br>
+                Quand je vends un bien dans le coin, les nouveaux propriétaires me demandent toujours des bonnes
+                adresses : plombier, électricien, restaurant... Je pourrais vous recommander systématiquement.<br><br>
+                En échange, si un de vos clients vous dit qu'il vend ou achète, pensez à moi ! Voici ma carte."
+            </div>
+            <div class="highlight-box success">
+                <p><strong>🔑 Partenaires à cibler :</strong> Notaires, courtiers, diagnostiqueurs, décorateurs,
+                    déménageurs, concierges d'immeuble, gardiens. Chacun peut devenir une source de leads.</p>
+            </div>
+        </div>
+
+        <div class="footer">© MandatMaster — mandatmaster.fr — Tous droits réservés</div>
+    </div>
+
+</body>
+
+</html>

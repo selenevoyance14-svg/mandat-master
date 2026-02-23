@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: #1F2937;
+            line-height: 1.6;
+            font-size: 12px;
+        }
+
+        .cover {
+            page-break-after: always;
+            height: 100vh;
+            background: linear-gradient(135deg, #1D4ED8 0%, #1E3A8A 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+            padding: 60px;
+        }
+
+        .cover .badge {
+            background: #F59E0B;
+            color: #1F2937;
+            padding: 8px 24px;
+            border-radius: 50px;
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 40px;
+        }
+
+        .cover h1 {
+            font-size: 42px;
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 10px;
+        }
+
+        .cover h1 span {
+            color: #F59E0B;
+        }
+
+        .cover .subtitle {
+            font-size: 16px;
+            color: rgba(255, 255, 255, 0.8);
+            margin-top: 20px;
+            max-width: 550px;
+        }
+
+        .cover .footer-cover {
+            position: absolute;
+            bottom: 40px;
+            font-size: 11px;
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .page {
+            padding: 40px 50px;
+            page-break-after: always;
+        }
+
+        .header-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 3px solid #1D4ED8;
+            padding-bottom: 12px;
+            margin-bottom: 25px;
+        }
+
+        .header-bar .logo {
+            font-weight: 900;
+            font-size: 14px;
+            color: #1D4ED8;
+        }
+
+        .header-bar .module {
+            background: #EFF6FF;
+            color: #1D4ED8;
+            padding: 5px 14px;
+            border-radius: 20px;
+            font-size: 10px;
+            font-weight: 700;
+        }
+
+        h2 {
+            font-size: 22px;
+            font-weight: 800;
+            color: #1D4ED8;
+            margin-bottom: 15px;
+        }
+
+        h3 {
+            font-size: 15px;
+            font-weight: 700;
+            color: #1F2937;
+            margin-top: 20px;
+            margin-bottom: 8px;
+            padding-left: 12px;
+            border-left: 4px solid #F59E0B;
+        }
+
+        p {
+            margin-bottom: 10px;
+            color: #374151;
+            font-size: 12px;
+        }
+
+        .week-header {
+            background: linear-gradient(135deg, #1D4ED8, #2563EB);
+            color: white;
+            padding: 12px 20px;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: 800;
+            margin: 20px 0 12px 0;
+        }
+
+        .day-card {
+            display: grid;
+            grid-template-columns: 70px 90px 1fr;
+            gap: 0;
+            border: 1px solid #E5E7EB;
+            border-radius: 8px;
+            margin-bottom: 6px;
+            overflow: hidden;
+            font-size: 11px;
+        }
+
+        .day-num {
+            background: #1D4ED8;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 8px;
+            font-weight: 800;
+            font-size: 14px;
+        }
+
+        .day-num small {
+            font-size: 9px;
+            font-weight: 500;
+            opacity: 0.8;
+        }
+
+        .day-type {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 8px;
+            font-weight: 700;
+            font-size: 10px;
+            text-align: center;
+        }
+
+        .day-type.teasing {
+            background: #FEF3C7;
+            color: #92400E;
+        }
+
+        .day-type.conseil {
+            background: #DBEAFE;
+            color: #1E40AF;
+        }
+
+        .day-type.preuve {
+            background: #D1FAE5;
+            color: #065F46;
+        }
+
+        .day-type.perso {
+            background: #EDE9FE;
+            color: #5B21B6;
+        }
+
+        .day-type.story {
+            background: #FCE7F3;
+            color: #9D174D;
+        }
+
+        .day-type.engagement {
+            background: #FFF7ED;
+            color: #C2410C;
+        }
+
+        .day-type.valeur {
+            background: #F0FDF4;
+            color: #166534;
+        }
+
+        .day-content {
+            padding: 8px 12px;
+            display: flex;
+            align-items: center;
+        }
+
+        .day-content strong {
+            color: #1F2937;
+        }
+
+        .highlight-box {
+            background: #EFF6FF;
+            border-left: 4px solid #1D4ED8;
+            padding: 12px 18px;
+            margin: 15px 0;
+            border-radius: 0 8px 8px 0;
+            font-size: 11px;
+        }
+
+        .highlight-box.warning {
+            background: #FEF3C7;
+            border-left-color: #F59E0B;
+        }
+
+        .highlight-box p {
+            margin-bottom: 0;
+        }
+
+        .legend {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 8px;
+            margin: 15px 0;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 10px;
+            font-weight: 600;
+        }
+
+        .legend-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 3px;
+        }
+
+        .footer {
+            text-align: center;
+            color: #9CA3AF;
+            font-size: 9px;
+            margin-top: 30px;
+            padding-top: 15px;
+            border-top: 1px solid #E5E7EB;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="cover">
+        <div class="badge">Bonus Exclusif</div>
+        <h1>CALENDRIER <span>ÉDITORIAL</span></h1>
+        <h1 style="font-size:36px;">30 JOURS</h1>
+        <p class="subtitle">30 posts et stories prêts à publier, planifiés jour par jour. Copiez, personnalisez, postez.
+            Zéro réflexion, 100% résultats.</p>
+        <div class="footer-cover">© MandatMaster — mandatmaster.fr</div>
+    </div>
+
+    <!-- PAGE MODE D'EMPLOI -->
+    <div class="page">
+        <div class="header-bar">
+            <div class="logo">MANDAT MASTER</div>
+            <div class="module">Calendrier Éditorial</div>
+        </div>
+
+        <h2>📅 Mode d'emploi</h2>
+        <p>Ce calendrier a été conçu pour publier <strong>1 contenu par jour</strong> sur vos réseaux (Instagram,
+            Facebook, LinkedIn). Chaque jour, le type de contenu et le texte sont prêts — personnalisez simplement les
+            <strong>[champs entre crochets]</strong>.</p>
+
+        <div class="highlight-box">
+            <p><strong>💡 Astuce Pro :</strong> Programmez toute la semaine le dimanche soir (30 min) avec un outil
+                gratuit comme <strong>Meta Business Suite</strong> (Facebook/Instagram) ou <strong>Buffer</strong>.
+                Comme ça, vous n'y pensez plus de la semaine.</p>
+        </div>
+
+        <h3>Légende des types de contenu</h3>
+        <div class="legend">
+            <div class="legend-item">
+                <div class="legend-dot" style="background:#FEF3C7;border:1px solid #F59E0B;"></div> Teasing (nouveau
+                bien)
+            </div>
+            <div class="legend-item">
+                <div class="legend-dot" style="background:#DBEAFE;border:1px solid #2563EB;"></div> Conseil expert
+            </div>
+            <div class="legend-item">
+                <div class="legend-dot" style="background:#D1FAE5;border:1px solid #10B981;"></div> Preuve sociale
+            </div>
+            <div class="legend-item">
+                <div class="legend-dot" style="background:#EDE9FE;border:1px solid #7C3AED;"></div> Personal branding
+            </div>
+            <div class="legend-item">
+                <div class="legend-dot" style="background:#FCE7F3;border:1px solid #EC4899;"></div> Story interactive
+            </div>
+            <div class="legend-item">
+                <div class="legend-dot" style="background:#FFF7ED;border:1px solid #F97316;"></div> Engagement
+                (question)
+            </div>
+            <div class="legend-item">
+                <div class="legend-dot" style="background:#F0FDF4;border:1px solid #22C55E;"></div> Valeur ajoutée
+            </div>
+        </div>
+
+        <div class="highlight-box warning">
+            <p><strong>⚠️ Règle d'or :</strong> Ne publiez jamais plus de 30% de contenu "vente" (teasing/nouveau bien).
+                Le reste doit être du contenu qui <em>donne</em> (conseils, stories, valeur). C'est comme ça qu'on crée
+                une audience fidèle.</p>
+        </div>
+
+        <!-- SEMAINE 1 -->
+        <div class="week-header">📆 SEMAINE 1 — Installation & Crédibilité</div>
+
+        <div class="day-card">
+            <div class="day-num">J1<small>LUNDI</small></div>
+            <div class="day-type perso">👋 Personal Branding</div>
+            <div class="day-content"><span><strong>Post "Qui suis-je ?"</strong> — Présentez-vous : pourquoi
+                    l'immobilier, votre zone, votre philosophie. Photo de vous souriante. <em>"Je suis [Prénom], et
+                        j'aide les propriétaires de [Ville] à vendre au meilleur prix..."</em></span></div>
+        </div>
+
+        <div class="day-card">
+            <div class="day-num">J2<small>MARDI</small></div>
+            <div class="day-type conseil">💡 Conseil</div>
+            <div class="day-content"><span><strong>"3 erreurs qui font fuir les acheteurs"</strong> — 1. Prix trop haut
+                    2. Photos au smartphone 3. Pas de DPE affiché. <em>"Laquelle voyez-vous le plus ? 👇"</em></span>
+            </div>
+        </div>
+
+        <div class="day-card">
+            <div class="day-num">J3<small>MERCREDI</small></div>
+            <div class="day-type story">📸 Story</div>
+            <div class="day-content"><span><strong>Story "Coulisses"</strong> — Filmez-vous en route vers un RDV
+                    estimation. <em>"Direction [Quartier] pour une estimation ce matin ! Ce secteur est en plein boom
+                        📈"</em></span></div>
+        </div>
+
+        <div class="day-card">
+            <div class="day-num">J4<small>JEUDI</small></div>
+            <div class="day-type teasing">🏠 Teasing</div>
+            <div class="day-content"><span><strong>"Ça arrive bientôt..."</strong> — Photo floutée ou détail (piscine,
+                    vue, cheminée). <em>"Ce bien arrive sur le marché la semaine prochaine. Devinez le quartier ?
+                        🤔"</em></span></div>
+        </div>
+
+        <div class="day-card">
+            <div class="day-num">J5<small>VENDREDI</small></div>
+            <div class="day-type valeur">📊 Valeur</div>
+            <div class="day-content"><span><strong>"Prix au m² à [Ville] — Mise à jour"</strong> — Partagez les derniers
+                    chiffres. <em>"T2 centre-ville : [X]€/m². Maison 4 pièces : [X]€/m². Ça vous surprend ?"</em></span>
+            </div>
+        </div>
+
+        <div class="day-card">
+            <div class="day-num">J6<small>SAMEDI</small></div>
+            <div class="day-type engagement">❓ Engagement</div>
+            <div class="day-content"><span><strong>"Sondage weekend"</strong> — <em>"Si vous deviez acheter aujourd'hui
+                        : Maison avec jardin 🏡 ou Appart en centre-ville 🏙️ ? Votez en commentaire !"</em></span>
+            </div>
+        </div>
+
+        <div class="day-card">
+            <div class="day-num">J7<small>DIMANCHE</small></div>
+            <div class="day-type story">📸 Story</div>
+            <div class="day-content"><span><strong>Story "Programmation"</strong> — Photo de votre ordi. <em>"Dimanche
+                        soir = préparation de la semaine. 5 biens à faire visiter, 3 estimations. C'est parti !
+                        💪"</em></span></div>
+        </div>
+    </div>
+
+    <!-- SEMAINE 2 -->
+    <div class="page">
+        <div class="header-bar">
+            <div class="logo">MANDAT MASTER</div>
+            <div class="module">Calendrier Éditorial</div>
+        </div>
+
+        <div class="week-header">📆 SEMAINE 2 — Preuve & Confiance</div>
+
+        <div class="day-card">
+            <div class="day-num">J8<small>LUNDI</small></div>
+            <div class="day-type preuve">✅ Preuve Sociale</div>
+            <div class="day-content"><span><strong>"VENDU en [X] jours !"</strong> — Photo du bien vendu + chiffres.
+                    <em>"Félicitations aux nouveaux propriétaires ! 3 semaines, 12 visites, 2 offres au prix. La
+                        stratégie fait tout."</em></span></div>
+        </div>
+
+        <div class="day-card">
+            <div class="day-num">J9<small>MARDI</small></div>
+            <div class="day-type conseil">💡 Conseil</div>
+            <div class="day-content"><span><strong>"Vendre vide ou meublé ?"</strong> — Avantages des deux + votre
+                    recommandation. <em>"Mon astuce : si vous vendez vide, laissez les rideaux et 2-3 éléments de déco.
+                        L'acheteur doit se projeter."</em></span></div>
+        </div>
+
+        <div class="day-card">
+            <div class="day-num">J10<small>MERCREDI</small></div>
+            <div class="day-type teasing">🏠 Nouveau Bien</div>
+            <div class="day-content"><span><strong>Annonce complète</strong> — Le bien teasé au J4, avec toutes les
+                    infos. <em>"🚨 NOUVEAU : [Type] à [Ville], [X]m², [X] chambres. [Atout principal]. Visites ce
+                        samedi. MP pour réserver !"</em></span></div>
+        </div>
+
+        <div class="day-card">
+            <div class="day-num">J11<small>JEUDI</small></div>
+            <div class="day-type valeur">🎓 Éducation</div>
+            <div class="day-content"><span><strong>"Le DPE expliqué simplement"</strong> — Infographie simple A→G.
+                    <em>"Un F peut faire baisser votre prix de 15%. Parfois, 5000€ de travaux = 20 000€ de plus-value.
+                        On en parle ?"</em></span></div>
+        </div>
+
+        <div class="day-card">
+            <div class="day-num">J12<small>VENDREDI</small></div>
+            <div class="day-type perso">🎬 Storytelling</div>
+            <div class="day-content"><span><strong>"Ma plus belle vente"</strong> — Racontez une histoire émouvante.
+                    <em>"Ce couple de retraités voulait vendre pour se rapprocher de leurs petits-enfants. 45 jours plus
+                        tard, ils signaient chez le notaire les larmes aux yeux..."</em></span></div>
+        </div>
+
+        <div class="day-card">
+            <div class="day-num">J13<small>SAMEDI</small></div>
+            <div class="day-type story">📸 Story</div>
+            <div class="day-content"><span><strong>Story "Visite en direct"</strong> — Filmez (flouter les visages).
+                    <em>"Samedi matin = visites ! Ce T3 lumineux fait craquer tout le monde. Qui veut le voir ?
+                        😍"</em></span></div>
+        </div>
+
+        <div class="day-card">
+            <div class="day-num">J14<small>DIMANCHE</small></div>
+            <div class="day-type engagement">❓ Engagement</div>
+            <div class="day-content"><span><strong>"Vrai ou Faux : Immobilier"</strong> — Quiz interactif. <em>"VRAI ou
+                        FAUX : Les frais de notaire sont négociables ? 🤔 Réponse demain !"</em></span></div>
+        </div>
+
+        <!-- SEMAINE 3 -->
+        <div class="week-header">📆 SEMAINE 3 — Autorité & Expertise</div>
+
+        <div class="day-card">
+            <div class="day-num">J15<small>LUNDI</small></div>
+            <div class="day-type conseil">💡 Conseil</div>
+            <div class="day-content"><span><strong>"Réponse au quiz + Frais de notaire expliqués"</strong> — <em>"FAUX !
+                        Les frais de notaire ne sont pas négociables (ce sont des taxes). MAIS l'agence peut ajuster ses
+                        honoraires. Voilà pourquoi il faut comparer..."</em></span></div>
+        </div>
+
+        <div class="day-card">
+            <div class="day-num">J16<small>MARDI</small></div>
+            <div class="day-type preuve">⭐ Avis Client</div>
+            <div class="day-content"><span><strong>Screenshot d'un avis Google 5 étoiles</strong> — <em>"Merci [Prénom]
+                        pour ce retour ! Accompagner mes clients du premier appel jusqu'à la remise des clés, c'est ça
+                        mon métier. ❤️"</em></span></div>
+        </div>
+
+        <div class="day-card">
+            <div class="day-num">J17<small>MERCREDI</small></div>
+            <div class="day-type teasing">🏠 Teasing</div>
+            <div class="day-content"><span><strong>"Bien à venir — Détail mystère"</strong> — Photo d'un détail
+                    architectural. <em>"Poutre apparente, sol en terre cuite, et une vue à couper le souffle. Ce mas
+                        provençal arrive bientôt... 🤫"</em></span></div>
+        </div>
+
+        <div class="day-card">
+            <div class="day-num">J18<small>JEUDI</small></div>
+            <div class="day-type valeur">📊 Marché</div>
+            <div class="day-content"><span><strong>"Combien de temps pour vendre à [Ville] ?"</strong> — Chiffres réels.
+                    <em>"Délai moyen : [X] jours. Mais attention : un bien au juste prix se vend en 21 jours max.
+                        Au-delà, il est 'grillé'."</em></span></div>
+        </div>
+
+        <div class="day-card">
+            <div class="day-num">J19<small>VENDREDI</small></div>
+            <div class="day-type perso">🎥 Coulisses</div>
+            <div class="day-content"><span><strong>"Une journée type d'agent immobilier"</strong> — Timeline visuelle.
+                    <em>"8h : Pige 📞 | 10h : Estimation chez les Martin 🏡 | 14h : 3 visites 👀 | 17h : Suivi clients
+                        📧. Et vous, c'est quoi votre quotidien ?"</em></span></div>
+        </div>
+
+        <div class="day-card">
+            <div class="day-num">J20<small>SAMEDI</small></div>
+            <div class="day-type engagement">🏡 Engagement</div>
+            <div class="day-content"><span><strong>"Devinez le prix !"</strong> — Photo d'un bien vendu. <em>"Ce T4 de
+                        85m² avec terrasse à [Ville] s'est vendu récemment. Devinez le prix en commentaire ! Réponse
+                        lundi 👇"</em></span></div>
+        </div>
+
+        <div class="day-card">
+            <div class="day-num">J21<small>DIMANCHE</small></div>
+            <div class="day-type story">📸 Story</div>
+            <div class="day-content"><span><strong>Story "Conseil du dimanche"</strong> — <em>"🏡 Conseil du dimanche :
+                        Si vous vendez, faites votre lit et rangez AVANT les visites. 80% de la décision est
+                        émotionnelle. Un lit défait = -5000€ dans la tête de l'acheteur."</em></span></div>
+        </div>
+    </div>
+
+    <!-- SEMAINE 4 -->
+    <div class="page">
+        <div class="header-bar">
+            <div class="logo">MANDAT MASTER</div>
+            <div class="module">Calendrier Éditorial</div>
+        </div>
+
+        <div class="week-header">📆 SEMAINE 4 — Conversion & Action</div>
+
+        <div class="day-card">
+            <div class="day-num">J22<small>LUNDI</small></div>
+            <div class="day-type preuve">✅ Résultat</div>
+            <div class="day-content"><span><strong>"Réponse au quiz prix"</strong> + nouvelle preuve sociale. <em>"Le T4
+                        s'est vendu [X]€ ! Bravo à ceux qui ont deviné. [X] personnes se sont battues pour ce bien. Le
+                        marché n'est PAS mort, il est sélectif."</em></span></div>
+        </div>
+
+        <div class="day-card">
+            <div class="day-num">J23<small>MARDI</small></div>
+            <div class="day-type conseil">💡 Conseil</div>
+            <div class="day-content"><span><strong>"5 choses à vérifier avant d'acheter"</strong> — Checklist acheteur.
+                    <em>"1. Le DPE 2. La taxe foncière 3. Les charges de copro 4. L'exposition 5. Le PLU du quartier.
+                        Partagez à un ami qui cherche !"</em></span></div>
+        </div>
+
+        <div class="day-card">
+            <div class="day-num">J24<small>MERCREDI</small></div>
+            <div class="day-type teasing">🏠 Nouveau Bien</div>
+            <div class="day-content"><span><strong>Annonce complète + appel à l'action</strong> — <em>"🔥 EXCLUSIVITÉ :
+                        [Type] [Ville], [X]m². [Description]. Prix : [X]€. ⚡ 3 visites déjà programmées. Derniers
+                        créneaux samedi. 📲 MP ou 06.XX.XX.XX.XX"</em></span></div>
+        </div>
+
+        <div class="day-card">
+            <div class="day-num">J25<small>JEUDI</small></div>
+            <div class="day-type valeur">🔑 Valeur</div>
+            <div class="day-content"><span><strong>"Estimation gratuite : comment ça marche ?"</strong> — Expliquez
+                    votre process. <em>"1. Je viens chez vous (30 min) 2. J'analyse les comparables 3. Je vous remets un
+                        dossier complet. Gratuit, sans engagement. Pourquoi s'en priver ?"</em></span></div>
+        </div>
+
+        <div class="day-card">
+            <div class="day-num">J26<small>VENDREDI</small></div>
+            <div class="day-type preuve">⭐ Témoignage</div>
+            <div class="day-content"><span><strong>Vidéo ou citation client</strong> — <em>"'On avait peur de mal tomber
+                        sur un agent. [Prénom] nous a rassurés dès le premier appel. Résultat : vendu au prix demandé en
+                        3 semaines.' — M. et Mme [Nom]"</em></span></div>
+        </div>
+
+        <div class="day-card">
+            <div class="day-num">J27<small>SAMEDI</small></div>
+            <div class="day-type story">📸 Story</div>
+            <div class="day-content"><span><strong>Story "Signature chez le notaire"</strong> — Photo des clés remises.
+                    <em>"🔑 Jour de signature ! Encore une famille heureuse. C'est pour ces moments que je me lève le
+                        matin. Bravo aux nouveaux propriétaires !"</em></span></div>
+        </div>
+
+        <div class="day-card">
+            <div class="day-num">J28<small>DIMANCHE</small></div>
+            <div class="day-type engagement">❓ Engagement</div>
+            <div class="day-content"><span><strong>"Le saviez-vous ?"</strong> — Fait surprenant. <em>"Le saviez-vous ?
+                        En France, un bien immobilier se vend en moyenne 92 jours. Mes biens en mandat exclusif : 28
+                        jours. La différence ? La stratégie. 📊"</em></span></div>
+        </div>
+
+        <!-- JOURS BONUS -->
+        <div class="week-header" style="background: linear-gradient(135deg, #F59E0B, #D97706);">🎁 JOURS BONUS (29-30)
+        </div>
+
+        <div class="day-card">
+            <div class="day-num" style="background:#F59E0B;">J29<small>LUNDI</small></div>
+            <div class="day-type conseil">💡 Conseil</div>
+            <div class="day-content"><span><strong>"Home Staging : avant/après"</strong> — Montrez la transformation.
+                    <em>"300€ de home staging = 15 000€ de plus-value. Voici ce qu'on a fait chez les Martin : [Avant →
+                        Après]. Le résultat parle de lui-même."</em></span></div>
+        </div>
+
+        <div class="day-card">
+            <div class="day-num" style="background:#F59E0B;">J30<small>MARDI</small></div>
+            <div class="day-type perso">🚀 Bilan</div>
+            <div class="day-content"><span><strong>"Bilan du mois !"</strong> — Montrez vos résultats. <em>"Ce mois :
+                        [X] estimations, [X] mandats, [X] ventes. Merci à tous mes clients pour leur confiance ! Le mois
+                        prochain ? Encore mieux. 📈 Qui a un projet ? MP !"</em></span></div>
+        </div>
+
+        <div class="highlight-box" style="margin-top: 20px;">
+            <p><strong>🔄 ET APRÈS ?</strong> Recommencez ! Remplacez les [champs] par de nouveaux biens et de nouveaux
+                chiffres. La structure reste la même — seul le contenu change. Vous avez maintenant un <strong>système
+                    de publication permanent</strong>.</p>
+        </div>
+
+        <div class="footer">© MandatMaster — mandatmaster.fr — Tous droits réservés</div>
+    </div>
+
+</body>
+
+</html>
