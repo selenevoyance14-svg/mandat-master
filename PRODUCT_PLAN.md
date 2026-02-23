@@ -36,9 +36,20 @@
 
 ## 🛠️ Stack Technique
 
-*   **Site Web** : Next.js (Landing Page haute conversion).
-*   **Paiement** : Stripe (En attente SIRET pour activation).
-*   **Livraison** : Email automatique après achat avec lien de téléchargement (Google Drive ou ZIP hébergé).
+*   **Site Web** : Page HTML statique (Prête).
+*   **Paiement** : Stripe (EN ATTENTE - Projet en pause jusqu'à obtention).
+*   **Livraison** : Fichier ZIP hébergé localement (Prêt).
+
+## 📅 Statut du Projet (23/02/2026)
+**EN COURS DE LANCEMENT**
+- [x] Landing Page : **OK**
+- [x] Contenu du produit (Scripts, Templates, PDF) : **OK**
+- [x] Fichier ZIP prêt à télécharger : **OK**
+- [x] Nom de domaine : **mandatmaster.fr** ✅
+- [x] Création compte Stripe : **OK** ✅
+- [x] Lien de paiement Stripe : `https://buy.stripe.com/fZu8wP45y4OYgyU8YCeEo00` ✅
+- [x] Remplacement du bouton simulation par lien de paiement réel : **OK** ✅
+- [ ] Déploiement sur mandatmaster.fr : **EN COURS**
 
 ## 📅 Plan d'Action
 
