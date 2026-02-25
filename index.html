@@ -394,19 +394,14 @@
         </div>
     </section>
     <script>
-        document.getElementById('leadForm').addEventListener('submit', async function(e) {
+        document.getElementById('leadForm').addEventListener('submit', function(e) {
             e.preventDefault();
             const email = document.getElementById('leadEmail').value;
-            // TODO: Remplacez cette URL par votre endpoint Brevo/Mailchimp
-            // Exemple Brevo : fetch('https://api.brevo.com/v3/contacts', { method: 'POST', headers: { 'api-key': 'VOTRE_CLE_API', 'Content-Type': 'application/json' }, body: JSON.stringify({ email, listIds: [VOTRE_LIST_ID] }) })
-            try {
-                // Placeholder — remplacez par votre service email
-                console.log('Email capturé :', email);
-                document.getElementById('leadForm').classList.add('hidden');
-                document.getElementById('leadConfirm').classList.remove('hidden');
-            } catch(err) {
-                console.error(err);
-            }
+            const subject = encodeURIComponent('Nouveau lead MandatMaster — Script de Pige Offert');
+            const body = encodeURIComponent('Un agent a demandé le script gratuit.\n\nEmail : ' + email + '\n\nEnvoyez-lui le script de pige "Voisin Prudent".');
+            window.location.href = 'mailto:contact@mandatmaster.fr?subject=' + subject + '&body=' + body;
+            document.getElementById('leadForm').classList.add('hidden');
+            document.getElementById('leadConfirm').classList.remove('hidden');
         });
     </script>
 
