@@ -25,22 +25,7 @@
         content="50+ templates, scripts, calendrier 30 jours. Décrochez plus de mandats exclusifs. 47€ seulement.">
     <meta name="twitter:image" content="https://mandatmaster.fr/og-image.png">
     <link rel="canonical" href="https://mandatmaster.fr">
-    <!-- Tailwind via CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        primary: '#1D4ED8',
-                        secondary: '#F59E0B',
-                        dark: '#1F2937',
-                        light: '#F3F4F6',
-                    }
-                }
-            }
-        }
-    </script>
+    <link rel="stylesheet" href="output.css">
     <!-- Icons (Lucide via CDN alternative or just SVG if needed, using simple FontAwesome or inline here) -->
     <!-- We'll use inline standard SVGs for simplicity and reliability -->
     <style>
@@ -381,6 +366,50 @@
         </div>
     </section>
 
+    <!-- LEAD MAGNET -->
+    <section id="script-offert" class="py-20 bg-primary">
+        <div class="container mx-auto px-4 max-w-2xl text-center">
+            <div class="inline-block bg-secondary text-dark text-xs font-bold px-3 py-1 rounded-full mb-4">🎁 GRATUIT</div>
+            <h2 class="text-3xl font-bold text-white mb-4">Recevez 1 Script de Pige Offert</h2>
+            <p class="text-blue-200 mb-8 text-lg">Le script "Voisin Prudent" — celui qui obtient le plus de rendez-vous en pige. Directement dans votre boîte mail.</p>
+            <form id="leadForm" class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+                <input
+                    type="email"
+                    id="leadEmail"
+                    placeholder="votre@email.fr"
+                    required
+                    class="flex-1 px-4 py-3 rounded-xl text-dark focus:outline-none focus:ring-2 focus:ring-secondary"
+                />
+                <button
+                    type="submit"
+                    class="bg-secondary text-dark font-bold px-6 py-3 rounded-xl hover:bg-amber-400 transition whitespace-nowrap"
+                >
+                    Recevoir le script →
+                </button>
+            </form>
+            <div id="leadConfirm" class="hidden mt-6 bg-white/10 rounded-xl p-4 text-white">
+                ✅ <strong>C'est parti !</strong> Vérifiez votre boîte mail dans quelques minutes.
+            </div>
+            <p class="text-blue-300 text-xs mt-4">Pas de spam. Désabonnement en 1 clic.</p>
+        </div>
+    </section>
+    <script>
+        document.getElementById('leadForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            const email = document.getElementById('leadEmail').value;
+            // TODO: Remplacez cette URL par votre endpoint Brevo/Mailchimp
+            // Exemple Brevo : fetch('https://api.brevo.com/v3/contacts', { method: 'POST', headers: { 'api-key': 'VOTRE_CLE_API', 'Content-Type': 'application/json' }, body: JSON.stringify({ email, listIds: [VOTRE_LIST_ID] }) })
+            try {
+                // Placeholder — remplacez par votre service email
+                console.log('Email capturé :', email);
+                document.getElementById('leadForm').classList.add('hidden');
+                document.getElementById('leadConfirm').classList.remove('hidden');
+            } catch(err) {
+                console.error(err);
+            }
+        });
+    </script>
+
     <!-- PRICING -->
     <section id="pricing" class="py-24 bg-gradient-to-b from-gray-50 to-white">
         <div class="container mx-auto px-4 max-w-5xl">
@@ -692,8 +721,8 @@
                 <div id="mentions">
                     <h5 class="text-white font-bold text-sm mb-2">Mentions Légales</h5>
                     <p><strong class="text-gray-300">Éditeur :</strong> MandatMaster — Entrepreneur individuel</p>
-                    <p><strong class="text-gray-300">Hébergeur :</strong> Netlify, Inc. — 44 Montgomery Street, Suite
-                        300, San Francisco, CA 94104, USA</p>
+                    <p><strong class="text-gray-300">SIRET :</strong> [VOTRE_SIRET]</p>
+                    <p><strong class="text-gray-300">Hébergeur :</strong> Vercel Inc. — 340 Pine Street, Suite 1501, San Francisco, CA 94104, USA</p>
                     <p><strong class="text-gray-300">Contact :</strong> contact@mandatmaster.fr</p>
                     <p class="mt-2">Conformément à la loi n° 2004-575 du 21 juin 2004 pour la confiance dans l'économie
                         numérique, les informations relatives à l'identité de l'éditeur sont accessibles sur demande à

@@ -1,0 +1,26 @@
+{
+  "name": "mandat-master",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build:css": "tailwindcss -i ./src/input.css -o ./output.css --minify",
+    "watch:css": "tailwindcss -i ./src/input.css -o ./output.css --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/selenevoyance14-svg/mandat-master.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/selenevoyance14-svg/mandat-master/issues"
+  },
+  "homepage": "https://github.com/selenevoyance14-svg/mandat-master#readme",
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.2.1",
+    "tailwindcss": "^4.2.1"
+  }
+}
