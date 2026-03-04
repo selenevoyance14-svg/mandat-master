@@ -78,9 +78,9 @@
                 <a href="#conseils" class="hover:text-primary transition">Conseils</a>
                 <a href="#faq" class="hover:text-primary transition">Questions</a>
             </div>
-            <a href="#kit-gratuit"
+            <a href="#conseils"
                 class="bg-primary text-white px-5 py-2 rounded-full font-medium hover:bg-blue-700 transition">
-                Télécharger Gratuitement
+                Voir les conseils
             </a>
         </div>
     </nav>
@@ -110,17 +110,9 @@
                         scripts de prospection et outils d'estimation pour doubler votre CA.
                     </p>
                     <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
-                        <a href="#kit-gratuit"
+                        <a href="#conseils"
                             class="w-full sm:w-auto bg-primary text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-blue-700 transition shadow-lg shadow-blue-500/25 flex items-center justify-center gap-2">
-                            <!-- Download Icon -->
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round">
-                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-                                <polyline points="7 10 12 15 17 10" />
-                                <line x1="12" x2="12" y1="15" y2="3" />
-                            </svg>
-                            Télécharger Gratuitement
+                            Découvrir les conseils →
                         </a>
                         <div class="flex items-center gap-2 text-sm text-gray-500 mt-4 sm:mt-0">
                             <span class="font-medium flex items-center gap-1">
@@ -366,97 +358,6 @@
         </div>
     </section>
 
-    <!-- LEAD MAGNET -->
-    <section id="script-offert" class="py-20 bg-primary">
-        <div class="container mx-auto px-4 max-w-2xl text-center">
-            <div class="inline-block bg-secondary text-dark text-xs font-bold px-3 py-1 rounded-full mb-4">🎁 GRATUIT</div>
-            <h2 class="text-3xl font-bold text-white mb-4">Recevez 1 Script de Pige Offert</h2>
-            <p class="text-blue-200 mb-8 text-lg">Le script "Voisin Prudent" — celui qui obtient le plus de rendez-vous en pige. Directement dans votre boîte mail.</p>
-            <form id="leadForm" class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
-                <input
-                    type="email"
-                    id="leadEmail"
-                    placeholder="votre@email.fr"
-                    required
-                    class="flex-1 px-4 py-3 rounded-xl text-dark focus:outline-none focus:ring-2 focus:ring-secondary"
-                />
-                <button
-                    type="submit"
-                    class="bg-secondary text-dark font-bold px-6 py-3 rounded-xl hover:bg-amber-400 transition whitespace-nowrap"
-                >
-                    Recevoir le script →
-                </button>
-            </form>
-            <div id="leadConfirm" class="hidden mt-6 bg-white/10 rounded-xl p-4 text-white">
-                ✅ <strong>C'est parti !</strong> Vérifiez votre boîte mail dans quelques minutes.
-            </div>
-            <p class="text-blue-300 text-xs mt-4">Pas de spam. Désabonnement en 1 clic.</p>
-        </div>
-    </section>
-    <script>
-        document.getElementById('leadForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const email = document.getElementById('leadEmail').value;
-            const subject = encodeURIComponent('Nouveau lead MandatMaster — Script de Pige Offert');
-            const body = encodeURIComponent('Un agent a demandé le script gratuit.\n\nEmail : ' + email + '\n\nEnvoyez-lui le script de pige "Voisin Prudent".');
-            window.location.href = 'mailto:contact@mandatmaster.fr?subject=' + subject + '&body=' + body;
-            document.getElementById('leadForm').classList.add('hidden');
-            document.getElementById('leadConfirm').classList.remove('hidden');
-        });
-    </script>
-
-    <!-- KIT GRATUIT -->
-    <section id="kit-gratuit" class="py-24 bg-gradient-to-b from-gray-50 to-white">
-        <div class="container mx-auto px-4 max-w-2xl text-center">
-            <div class="inline-block bg-secondary text-dark text-xs font-bold px-3 py-1 rounded-full mb-4">🎁 100% GRATUIT</div>
-            <h2 class="text-3xl font-bold mb-4">Téléchargez le Kit MandatMaster Gratuitement</h2>
-            <p class="text-gray-600 mb-8 text-lg">8 modules complets, 50+ templates, scripts de prospection — à recevoir immédiatement dans votre boîte mail, sans payer.</p>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center mb-6 text-sm text-gray-500">
-                <span class="flex items-center gap-1 justify-center">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="text-green-500"><polyline points="20 6 9 17 4 12" /></svg>
-                    Accès à vie
-                </span>
-                <span class="flex items-center gap-1 justify-center">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="text-green-500"><polyline points="20 6 9 17 4 12" /></svg>
-                    Téléchargement immédiat
-                </span>
-                <span class="flex items-center gap-1 justify-center">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="text-green-500"><polyline points="20 6 9 17 4 12" /></svg>
-                    Sans carte bancaire
-                </span>
-            </div>
-            <form id="kitForm" class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
-                <input
-                    type="email"
-                    id="kitEmail"
-                    placeholder="votre@email.fr"
-                    required
-                    class="flex-1 px-4 py-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary text-dark"
-                />
-                <button
-                    type="submit"
-                    class="bg-primary text-white font-bold px-6 py-3 rounded-xl hover:bg-blue-700 transition whitespace-nowrap"
-                >
-                    Recevoir le kit →
-                </button>
-            </form>
-            <div id="kitConfirm" class="hidden mt-6 bg-green-50 rounded-xl p-4 text-green-800 border border-green-200">
-                ✅ <strong>C'est parti !</strong> Vérifiez votre boîte mail dans quelques minutes pour accéder au kit complet.
-            </div>
-            <p class="text-gray-400 text-xs mt-4">Pas de spam. Désabonnement en 1 clic.</p>
-        </div>
-    </section>
-    <script>
-        document.getElementById('kitForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const email = document.getElementById('kitEmail').value;
-            const subject = encodeURIComponent('Nouveau téléchargement MandatMaster — Kit Complet Gratuit');
-            const body = encodeURIComponent('Un agent a demandé le kit complet gratuit.\n\nEmail : ' + email + '\n\nEnvoyez-lui le lien de téléchargement du kit MandatMaster.');
-            window.location.href = 'mailto:contact@mandatmaster.fr?subject=' + subject + '&body=' + body;
-            document.getElementById('kitForm').classList.add('hidden');
-            document.getElementById('kitConfirm').classList.remove('hidden');
-        });
-    </script>
 
     <!-- SECTION ARTICLES / BLOG -->
     <section id="conseils" class="py-24 bg-white border-t border-gray-100">
@@ -519,6 +420,57 @@
                             comment utiliser Facebook et Instagram pour que les vendeurs de votre quartier vous
                             connaissent avant même l'estimation.</p>
                         <a href="articles/reseaux-sociaux-immobilier.html"
+                            class="text-primary font-bold text-sm hover:underline">Lire la suite →</a>
+                    </div>
+                </article>
+
+                <!-- Article 4 -->
+                <article
+                    class="bg-gray-50 rounded-2xl border border-gray-200 overflow-hidden hover:shadow-xl transition flex flex-col group">
+                    <div
+                        class="h-48 bg-green-100 flex items-center justify-center text-5xl group-hover:scale-110 transition-transform duration-500">
+                        🏡</div>
+                    <div class="p-6 flex-grow">
+                        <h3 class="font-bold text-xl mb-3 text-gray-900 leading-tight">Estimation immobilière : Comment
+                            convaincre dès la première visite</h3>
+                        <p class="text-gray-600 text-sm mb-6 leading-relaxed">Un dossier d'estimation bien présenté vaut
+                            mieux que dix arguments. Voici la structure exacte pour impressionner le vendeur et décrocher
+                            le mandat dans la foulée.</p>
+                        <a href="articles/estimation-immobiliere-visite.html"
+                            class="text-primary font-bold text-sm hover:underline">Lire la suite →</a>
+                    </div>
+                </article>
+
+                <!-- Article 5 -->
+                <article
+                    class="bg-gray-50 rounded-2xl border border-gray-200 overflow-hidden hover:shadow-xl transition flex flex-col group">
+                    <div
+                        class="h-48 bg-red-100 flex items-center justify-center text-5xl group-hover:scale-110 transition-transform duration-500">
+                        🛡️</div>
+                    <div class="p-6 flex-grow">
+                        <h3 class="font-bold text-xl mb-3 text-gray-900 leading-tight">Objections vendeurs : Les 7
+                            réponses qui font tomber les barrières</h3>
+                        <p class="text-gray-600 text-sm mb-6 leading-relaxed">"Je veux vendre seul", "votre commission
+                            est trop élevée", "j'ai déjà une agence"... Découvrez comment répondre sans paraître
+                            agressif et retourner chaque objection en argument.</p>
+                        <a href="articles/objections-vendeurs-reponses.html"
+                            class="text-primary font-bold text-sm hover:underline">Lire la suite →</a>
+                    </div>
+                </article>
+
+                <!-- Article 6 -->
+                <article
+                    class="bg-gray-50 rounded-2xl border border-gray-200 overflow-hidden hover:shadow-xl transition flex flex-col group">
+                    <div
+                        class="h-48 bg-orange-100 flex items-center justify-center text-5xl group-hover:scale-110 transition-transform duration-500">
+                        🚶</div>
+                    <div class="p-6 flex-grow">
+                        <h3 class="font-bold text-xl mb-3 text-gray-900 leading-tight">Farming & Porte-à-Porte : La
+                            méthode qui crée de la notoriété locale</h3>
+                        <p class="text-gray-600 text-sm mb-6 leading-relaxed">Le farming immobilier est la stratégie
+                            la plus rentable sur le long terme. Voici comment organiser votre secteur géographique pour
+                            générer des mandats en continu.</p>
+                        <a href="articles/farming-porte-a-porte-immobilier.html"
                             class="text-primary font-bold text-sm hover:underline">Lire la suite →</a>
                     </div>
                 </article>
