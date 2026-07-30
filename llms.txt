@@ -1,0 +1,24 @@
+# MandatMaster
+
+> Centre de ressources gratuit pour agents immobiliers indépendants et mandataires en France.
+
+## Ressources principales
+
+- [Accueil et kit gratuit](https://mandatmaster.fr/) : 8 modules PDF, scripts, modèles et fiches de suivi, sans inscription.
+- [Prospection et mandats](https://mandatmaster.fr/#prospection) : pige, relance, farming, partenariats et mandat exclusif.
+- [Estimation et négociation](https://mandatmaster.fr/#negociation) : prix, objections vendeurs, commission et négociation.
+- [Marketing immobilier](https://mandatmaster.fr/#marketing) : réseaux sociaux, avis Google, photos, annonces et image de marque.
+- [Matériel de l'agent](https://mandatmaster.fr/#materiel) : équipement terrain et bureau recommandé.
+- [Carrière et organisation](https://mandatmaster.fr/#carriere) : démarrage, statut, revenus, réseaux et productivité.
+
+## Modèle éditorial et économique
+
+- Les guides et le kit MandatMaster sont gratuits.
+- Le site est financé par Google AdSense et des liens affiliés Amazon.
+- Les recommandations d'achat sont signalées et n'ajoutent aucun surcoût.
+- Les contenus juridiques, fiscaux et professionnels sont informatifs et doivent être vérifiés auprès d'un professionnel compétent.
+
+## Contact
+
+- Site : https://mandatmaster.fr/
+- Courriel : contact@mandatmaster.fr

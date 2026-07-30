@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#071b33"/>
+      <stop offset="1" stop-color="#123f70"/>
+    </linearGradient>
+    <radialGradient id="glow">
+      <stop offset="0" stop-color="#1d4ed8" stop-opacity=".8"/>
+      <stop offset="1" stop-color="#1d4ed8" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <circle cx="1070" cy="80" r="330" fill="url(#glow)"/>
+  <circle cx="70" cy="650" r="300" fill="#f59e0b" opacity=".09"/>
+  <rect x="72" y="65" width="246" height="46" rx="23" fill="#ffffff" opacity=".1"/>
+  <text x="99" y="96" font-family="Arial, sans-serif" font-size="21" font-weight="700" fill="#ffffff">71 GUIDES GRATUITS</text>
+  <text x="72" y="205" font-family="Arial, sans-serif" font-size="58" font-weight="800" fill="#ffffff">Mandat<tspan fill="#4f83ff">Master</tspan></text>
+  <text x="72" y="297" font-family="Arial, sans-serif" font-size="52" font-weight="800" fill="#ffffff">Le kit terrain de l’agent</text>
+  <text x="72" y="360" font-family="Arial, sans-serif" font-size="52" font-weight="800" fill="#f59e0b">immobilier indépendant</text>
+  <text x="72" y="431" font-family="Arial, sans-serif" font-size="26" fill="#c8dcf1">Scripts · Prospection · Estimation · Marketing · Matériel</text>
+  <rect x="72" y="494" width="318" height="70" rx="14" fill="#f59e0b"/>
+  <text x="112" y="538" font-family="Arial, sans-serif" font-size="25" font-weight="800" fill="#0b2545">KIT GRATUIT · 8 MODULES</text>
+  <g transform="translate(925 220)" fill="none" stroke="#ffffff" stroke-width="13" stroke-linecap="round" stroke-linejoin="round" opacity=".95">
+    <rect x="0" y="0" width="145" height="190" rx="18"/>
+    <path d="M40 190v-42h65v42M38 53h2m62 0h2M71 53h2M38 92h2m33 0h2m29 0h2M38 130h2m33 0h2m29 0h2"/>
+  </g>
+</svg>
