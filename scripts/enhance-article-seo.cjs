@@ -8,6 +8,10 @@ function escapeJson(value) {
     return value.replace(/\s+/g, " ").trim();
 }
 
+function stripHtml(value) {
+    return value.replace(/<[^>]*>/g, " ").replace(/&nbsp;/g, " ").replace(/&amp;/g, "&").replace(/&#39;/g, "'").replace(/\s+/g, " ").trim();
+}
+
 for (const file of files) {
     const fullPath = path.join(articlesDir, file);
     let html = fs.readFileSync(fullPath, "utf8");
@@ -54,6 +58,29 @@ for (const file of files) {
             "</head>",
             `    <script type="application/ld+json">\n${JSON.stringify(schema, null, 2)}\n    </script>\n</head>`
         );
+    }
+
+    const h1 = html.match(/<h1[^>]*>([\s\S]*?)<\/h1>/i)?.[1];
+    const pageName = stripHtml(h1 || title.replace(/\s*\|\s*MandatMaster\s*$/i, ""));
+
+    if (!/BreadcrumbList/i.test(html)) {
+        const breadcrumbSchema = {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+                { "@type": "ListItem", position: 1, name: "Accueil", item: "https://mandatmaster.fr/" },
+                { "@type": "ListItem", position: 2, name: pageName, item: canonical },
+            ],
+        };
+        html = html.replace(
+            "</head>",
+            `    <script type="application/ld+json">\n${JSON.stringify(breadcrumbSchema, null, 2)}\n    </script>\n</head>`
+        );
+    }
+
+    if (!/aria-label="Fil d’Ariane"/i.test(html)) {
+        const breadcrumb = `\n    <nav aria-label="Fil d’Ariane" class="bg-white border-b border-gray-100">\n        <ol class="container mx-auto px-6 py-3 flex items-center gap-2 text-sm text-gray-500">\n            <li><a href="../index.html" class="hover:text-primary transition">Accueil</a></li>\n            <li aria-hidden="true">/</li>\n            <li class="text-gray-700 truncate" aria-current="page">${pageName}</li>\n        </ol>\n    </nav>`;
+        html = html.replace(/(<\/nav>)/i, `$1${breadcrumb}`);
     }
 
     html = html.replace(/<a\b([^>]*href="https:\/\/www\.amazon\.fr[^"]*"[^>]*)>/gi, (match, attrs) => {
