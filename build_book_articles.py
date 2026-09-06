@@ -52,7 +52,7 @@ TITLES = {
 
 NAV = '''    <nav class="border-b border-gray-200 bg-white/90 backdrop-blur-md sticky top-0 z-50">
         <div class="container mx-auto px-4 h-16 flex items-center justify-between">
-            <a href="../index.html" class="flex items-center gap-2 font-extrabold text-xl text-navy">
+            <a href="/" class="flex items-center gap-2 font-extrabold text-xl text-navy">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary"><rect width="16" height="20" x="4" y="2" rx="2" ry="2" /><path d="M9 22v-4h6v4" /></svg>
                 Mandat<span class="text-primary">Master</span>
             </a>
@@ -94,7 +94,7 @@ def render_article(a):
     related_items = []
     for rs in a["related"]:
         t = TITLES.get(rs, rs)
-        related_items.append(f'<li><a href="{rs}.html" class="text-primary font-semibold hover:underline">{t} →</a></li>')
+        related_items.append(f'<li><a href="/articles/{rs}" class="text-primary font-semibold hover:underline">{t} →</a></li>')
     related_html = "\n                ".join(related_items)
 
     target, label = CTA_TARGET[a["section"]]
@@ -106,11 +106,11 @@ def render_article(a):
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{a["title"]} | MandatMaster</title>
     <meta name="description" content="{a["desc"]}">
-    <link rel="canonical" href="https://mandatmaster.fr/articles/{a["slug"]}.html">
+    <link rel="canonical" href="https://mandatmaster.fr/articles/{a["slug"]}">
     <meta property="og:title" content="{a["title"]} | MandatMaster">
     <meta property="og:description" content="{a["desc"]}">
     <meta property="og:type" content="article">
-    <meta property="og:url" content="https://mandatmaster.fr/articles/{a["slug"]}.html">
+    <meta property="og:url" content="https://mandatmaster.fr/articles/{a["slug"]}">
     <meta property="og:locale" content="fr_FR">
     <link rel="stylesheet" href="../output.css">
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5064203547863113" crossorigin="anonymous"></script>
@@ -160,8 +160,8 @@ def render_article(a):
             <p class="mb-3">© 2026 MandatMaster. Tous droits réservés.</p>
             <p class="text-xs max-w-2xl mx-auto mb-4">En tant que Partenaire Amazon, MandatMaster réalise un bénéfice sur les achats remplissant les conditions requises.</p>
             <div class="flex justify-center gap-6 text-sm">
-                <a href="../index.html#mentions" class="hover:text-white transition">Mentions légales</a>
-                <a href="../index.html" class="hover:text-white transition">Accueil</a>
+                <a href="/mentions-legales" class="hover:text-white transition">Mentions légales</a>
+                <a href="/" class="hover:text-white transition">Accueil</a>
             </div>
         </div>
     </footer>
@@ -173,7 +173,7 @@ def render_article(a):
 
 
 def card_light(a, card_bg):
-    return f'''                <a href="articles/{a["slug"]}.html" class="group block {card_bg} rounded-2xl border border-gray-200 hover:border-primary/40 hover:shadow-lg transition p-5">
+    return f'''                <a href="/articles/{a["slug"]}" class="group block {card_bg} rounded-2xl border border-gray-200 hover:border-primary/40 hover:shadow-lg transition p-5">
                     <div class="flex items-start gap-4">
                         <div class="shrink-0 w-12 h-12 rounded-xl {a["color"]} flex items-center justify-center text-2xl">{a["emoji"]}</div>
                         <div><h3 class="font-bold text-navy leading-snug group-hover:text-primary transition">{a["title"]}</h3>
@@ -183,7 +183,7 @@ def card_light(a, card_bg):
 
 
 def card_dark(a):
-    return f'''                <a href="articles/{a["slug"]}.html" class="group block bg-white/5 border border-white/10 rounded-2xl hover:bg-white/10 hover:border-secondary/50 transition p-5">
+    return f'''                <a href="/articles/{a["slug"]}" class="group block bg-white/5 border border-white/10 rounded-2xl hover:bg-white/10 hover:border-secondary/50 transition p-5">
                     <div class="flex items-start gap-4">
                         <div class="shrink-0 w-12 h-12 rounded-xl bg-secondary/20 flex items-center justify-center text-2xl">{a["emoji"]}</div>
                         <div><h3 class="font-bold leading-snug group-hover:text-secondary transition">{a["title"]}</h3>
@@ -317,11 +317,11 @@ with open(idx_path, encoding="utf-8") as f:
 
 inserted = 0
 for section, (anchor_slug, card_bg) in LAST_CARD.items():
-    cards = [a for a in A if a["section"] == section and f'articles/{a["slug"]}.html' not in html]
+    cards = [a for a in A if a["section"] == section and f'/articles/{a["slug"]}' not in html]
     if not cards:
         continue
     cards_html = "\n".join(card_light(a, card_bg) for a in cards)
-    needle = f'articles/{anchor_slug}.html'
+    needle = f'/articles/{anchor_slug}'
     pos = html.find(needle)
     if pos == -1:
         print(f"⚠️  ancre introuvable pour {section} ({anchor_slug})")
@@ -340,7 +340,7 @@ with open(sm_path, encoding="utf-8") as f:
     sm = f.read()
 entries, added = "", 0
 for a in A:
-    loc = f"https://mandatmaster.fr/articles/{a['slug']}.html"
+    loc = f"https://mandatmaster.fr/articles/{a['slug']}"
     if loc in sm:
         continue
     entries += f"  <url>\n    <loc>{loc}</loc>\n    <changefreq>monthly</changefreq>\n    <priority>0.7</priority>\n  </url>\n"

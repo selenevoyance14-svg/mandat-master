@@ -19,7 +19,7 @@ for (const file of files) {
     const description = html.match(/<meta\s+name="description"\s+content="([^"]*)"/i)?.[1];
     if (!title || !description) continue;
 
-    const canonical = `https://mandatmaster.fr/articles/${file}`;
+    const canonical = `https://mandatmaster.fr/articles/${file.replace(/\.html$/, "")}`;
     if (!/<link\s+rel="canonical"/i.test(html)) {
         html = html.replace(
             /(<meta\s+name="description"[^>]*>)/i,
