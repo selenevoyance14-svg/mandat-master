@@ -1,0 +1,10 @@
+Retour de visite : recueillir des critères concrets
+
+Fiche d’organisation à adapter au dossier. Ne remplace pas une validation technique, juridique ou contractuelle.
+
+Usage recherché : [critère].
+Élément apprécié : [fait].
+Point bloquant exprimé : [critère].
+Question à vérifier : [sujet].
+Suite souhaitée par le visiteur : [réponse].
+Information utile au vendeur : [synthèse sans donnée privée superflue].

@@ -1,0 +1,10 @@
+Comparables immobiliers : rendre les écarts visibles
+
+Fiche d’organisation à adapter au dossier. Ne remplace pas une validation technique, juridique ou contractuelle.
+
+Référence : [source / date].
+Nature du prix : [annonce / vente publiée].
+Caractéristiques connues : [faits].
+Différences avec le bien : [écarts].
+Informations manquantes : [liste].
+Limite de la comparaison : [explication].

@@ -1,0 +1,10 @@
+Contenu local : transformer une question en article
+
+Fiche d’organisation à adapter au dossier. Ne remplace pas une validation technique, juridique ou contractuelle.
+
+Question de départ : [formulation anonymisée].
+Lecteur concerné : [besoin].
+Faits à vérifier : [liste].
+Sources : [organismes].
+Expérience de terrain : [limite].
+Étape proposée : [vérification ou préparation].

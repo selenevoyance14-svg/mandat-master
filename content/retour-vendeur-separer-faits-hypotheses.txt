@@ -1,0 +1,10 @@
+Échange vendeur : séparer faits et hypothèses
+
+Fiche d’organisation à adapter au dossier. Ne remplace pas une validation technique, juridique ou contractuelle.
+
+Fait observé : [élément / date].
+Source : [référence].
+Hypothèse à examiner : [formulation].
+Action proposée : [geste précis].
+Validation à obtenir : [interlocuteur].
+Contrôle prévu : [étape].

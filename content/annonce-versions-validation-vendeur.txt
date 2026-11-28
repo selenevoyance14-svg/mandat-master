@@ -1,0 +1,10 @@
+Annonce immobilière : suivre les versions du texte
+
+Fiche d’organisation à adapter au dossier. Ne remplace pas une validation technique, juridique ou contractuelle.
+
+Version : [date / numéro].
+Correction : [passage].
+Nature : [style / fait / à examiner].
+Source : [référence].
+Relecture effectuée par : [personne].
+Version diffusée : [repère / date].

@@ -1,0 +1,11 @@
+Bilan vendeur : définir les chiffres avant de comparer
+
+Fiche d’organisation à adapter au dossier. Ne remplace pas une validation technique, juridique ou contractuelle.
+
+Période : [dates].
+Demandes reçues : [définition / total].
+Contacts distincts : [total].
+Visites réalisées : [total].
+Contre-visites : [total].
+Contexte de diffusion : [changement].
+Action à discuter : [proposition].

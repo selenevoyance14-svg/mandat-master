@@ -1,0 +1,10 @@
+CRM immobilier : traiter les contacts en doublon
+
+Fiche d’organisation à adapter au dossier. Ne remplace pas une validation technique, juridique ou contractuelle.
+
+Fiches comparées : [références].
+Même contact confirmé : [éléments].
+Préférence la plus récente : [information].
+Historique à conserver : [échanges].
+Action réalisée : [date].
+Contrôle après fusion : [résultat / point à vérifier].

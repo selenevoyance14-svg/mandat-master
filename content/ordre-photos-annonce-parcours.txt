@@ -1,0 +1,9 @@
+Photos d’annonce : construire un ordre cohérent
+
+Fiche d’organisation à adapter au dossier. Ne remplace pas une validation technique, juridique ou contractuelle.
+
+Couverture : [vue choisie / raison].
+Parcours : [pièces dans l’ordre].
+Annexe : [désignation à confirmer].
+Image retirée : [doublon / défaut].
+Dernier contrôle : [personne / date].

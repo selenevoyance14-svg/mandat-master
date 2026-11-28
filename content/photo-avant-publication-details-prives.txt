@@ -1,0 +1,9 @@
+Photo d’annonce : repérer les détails privés
+
+Fiche d’organisation à adapter au dossier. Ne remplace pas une validation technique, juridique ou contractuelle.
+
+Fichier : [nom].
+Détail à traiter : [document / écran / autre].
+Solution retenue : [nouvelle prise / modification adaptée].
+Contrôle de fidélité : [résultat].
+Version publiée : [date / fichier].

@@ -1,0 +1,11 @@
+Document attendu : suivre le dossier immobilier
+
+Fiche d’organisation à adapter au dossier. Ne remplace pas une validation technique, juridique ou contractuelle.
+
+Document : [intitulé].
+Demandé le : [date].
+Annoncé par : [contact].
+Reçu le : [date / non reçu].
+Version : [référence].
+Examen ou précision attendue : [point].
+Prochaine action : [responsable / étape].

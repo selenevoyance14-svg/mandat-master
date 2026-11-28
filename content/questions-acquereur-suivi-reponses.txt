@@ -1,0 +1,10 @@
+Questions acquéreurs : suivre les réponses
+
+Fiche d’organisation à adapter au dossier. Ne remplace pas une validation technique, juridique ou contractuelle.
+
+Question : [point précis].
+Source disponible : [document / déclaration / aucune].
+À vérifier auprès de : [interlocuteur].
+Réponse reçue le : [date].
+Information transmise le : [date].
+Point restant ouvert : [précision].

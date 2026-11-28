@@ -1,0 +1,10 @@
+Visite annulée : réorganiser son agenda
+
+Fiche d’organisation à adapter au dossier. Ne remplace pas une validation technique, juridique ou contractuelle.
+
+Rendez-vous annulé : [bien / date / heure].
+Accès à prévenir : [contact].
+Prise en compte confirmée : [oui / attente].
+Demande de report : [oui / non / à préciser].
+Nouveau créneau proposé : [option].
+Confirmation finale : [date et canal].

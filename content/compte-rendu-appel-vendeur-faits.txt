@@ -1,0 +1,9 @@
+Appel vendeur : écrire un récapitulatif utile
+
+Fiche d’organisation à adapter au dossier. Ne remplace pas une validation technique, juridique ou contractuelle.
+
+« À la suite de notre appel du [date], je retiens [fait].
+Nous avons évoqué [proposition à confirmer].
+Je dois [action] et reste en attente de [point].
+Merci de me signaler une correction ou de préciser [question].
+»

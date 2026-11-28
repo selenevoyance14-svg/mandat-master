@@ -1,0 +1,10 @@
+Diffusion d’annonce : suivre les portails et les écarts
+
+Fiche d’organisation à adapter au dossier. Ne remplace pas une validation technique, juridique ou contractuelle.
+
+Support : [portail].
+URL : [adresse].
+Version attendue : [repère].
+Écart visible : [texte / photo / statut].
+Correction demandée le : [date].
+Contrôle final : [date / résultat].

@@ -1,0 +1,9 @@
+Photos immobilières : écrire des légendes factuelles
+
+Fiche d’organisation à adapter au dossier. Ne remplace pas une validation technique, juridique ou contractuelle.
+
+Photo : [nom de fichier].
+Pièce ou vue : [désignation].
+Légende proposée : [phrase factuelle].
+Information à confirmer : [point].
+Source de la précision : [document / interlocuteur].
